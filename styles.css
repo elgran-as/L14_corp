@@ -1,0 +1,232 @@
+/* Estilos base */
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Estilos del carrusel */
+#carousel {
+    overflow: hidden;
+    position: relative;
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+#carousel-track {
+    display: flex;
+    transition: transform 2s ease-in-out;
+    will-change: transform;
+    max-width: 100vw;
+}
+
+.carousel-item {
+    flex: 0 0 24rem;
+    max-width: 24rem;
+    margin-right: 3rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+}
+
+.caption-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.caption-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #1e40af;
+    margin-bottom: 0.25rem;
+}
+
+.caption-price {
+    font-weight: 500;
+    color: #1e40af;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background-color: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.carousel-indicators button.active {
+    background-color: #1e40af;
+}
+.carousel-indicators button:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
+.carousel-indicators button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.carousel-indicators button.active {
+    background-color: #1e40af;
+    transform: scale(1.2);
+}
+
+/* Mejoras de accesibilidad para elementos interactivos */
+a:focus,
+button:focus,
+select:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.2);
+}
+
+/* Remover outline solo cuando no se usa teclado */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Estilos de la galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 0.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+/* Utilidades */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Estilos de imágenes */
+.car-image {
+    height: 120px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Layout principal */
+main {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+}
+
+footer {
+    margin-bottom: 1rem;
+}
+
+/* Media queries */
+@media (max-width: 640px) {
+    .carousel-item {
+        flex: 0 0 90vw;
+        max-width: 90vw;
+        margin-right: 0.5rem;
+    }
+
+    .carousel-item img {
+        height: 120px;
+        width: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .caption-content {
+        align-items: center;
+        text-align: center;
+    }
+}

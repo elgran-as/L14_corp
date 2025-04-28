@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Planificación - L14 Corp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Calendario -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+</head>
+
+<body class="bg-white text-slate-900 flex flex-col min-h-screen">
+    <header class="fixed top-0 left-0 w-full bg-white border-b border-slate-200 shadow z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap sm:flex-nowrap gap-3">
+            <img alt="Logo L14 Corp, estilizado con letras L14 en azul oscuro" class="h-10 w-auto" height="40"
+                src="/assets/images/L14_corp.png" width="80" />
+            <div class="flex items-center gap-4">
+                <select aria-label="Cambiar idioma"
+                    class="border border-slate-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <option selected value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 flex-grow">
+        <h1 class="text-3xl sm:text-4xl font-extrabold mb-6 text-center">Planificación de Reserva</h1>
+        
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-4">Detalles de la Reserva</h2>
+                <div id="reservationDetails" class="text-slate-700">
+                    <!-- Los detalles se llenarán con JavaScript -->
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-4">Seleccionar Fechas</h2>
+                <div class="flex flex-col gap-4">
+                    <div>
+                        <label for="dateRange" class="block text-sm font-medium text-slate-700 mb-1">Rango de Fechas</label>
+                        <input type="text" id="dateRange" class="w-full border border-slate-300 rounded-md px-4 py-2" placeholder="Selecciona las fechas" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <button id="submitReservation" class="w-full bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
+                Confirmar Reserva
+            </button>
+        </div>
+    </main>
+
+    <footer class="text-center text-slate-500 text-sm mb-20 px-2">
+        <p>© 2024 L14 Corp. Todos los derechos reservados.</p>
+        <div class="flex justify-center gap-4 mt-3">
+            <a href="https://x.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en X (Twitter)">
+                <i class="fab fa-twitter text-lg"></i>
+            </a>
+            <a href="https://instagram.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Instagram">
+                <i class="fab fa-instagram text-lg"></i>
+            </a>
+            <a href="https://facebook.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Facebook">
+                <i class="fab fa-facebook text-lg"></i>
+            </a>
+        </div>
+    </footer>
+
+    <nav aria-label="Navegación inferior" class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-inner z-40">
+        <ul class="flex justify-around max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 gap-3">
+            <li class="flex-1">
+                <a href="/index.html" title="Inicio"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-home text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/apartments.html" title="Departamentos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-building text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/cars.html" title="Autos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-car text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/planning.html" title="Planificación"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-blue-900 bg-blue-900 text-white focus:outline-none transition">
+                    <i class="fas fa-calendar-alt text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/about.html" title="Quienes Somos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-info-circle text-lg"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        // Inicializar el calendario
+        flatpickr("#dateRange", {
+            mode: "range",
+            dateFormat: "Y-m-d",
+            minDate: "today",
+            locale: "es",
+            disableMobile: "true"
+        });
+
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const aptId = urlParams.get('apt');
+        const carId = urlParams.get('car');
+
+        // Mostrar detalles de la reserva
+        const reservationDetails = document.getElementById('reservationDetails');
+        if (aptId) {
+            reservationDetails.innerHTML = `
+                <p class="mb-2"><strong>Tipo:</strong> Departamento</p>
+                <p class="mb-2"><strong>ID:</strong> ${aptId}</p>
+            `;
+        } else if (carId) {
+            reservationDetails.innerHTML = `
+                <p class="mb-2"><strong>Tipo:</strong> Auto</p>
+                <p class="mb-2"><strong>ID:</strong> ${carId}</p>
+            `;
+        }
+
+        // Manejar el envío de la reserva
+        document.getElementById('submitReservation').addEventListener('click', function() {
+            const dateRange = document.getElementById('dateRange').value;
+            if (!dateRange) {
+                alert('Por favor, selecciona las fechas de tu reserva');
+                return;
+            }
+            // Aquí iría la lógica para procesar la reserva
+            alert('Reserva enviada con éxito');
+        });
+    </script>
+</body>
+</html>

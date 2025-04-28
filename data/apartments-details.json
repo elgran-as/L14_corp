@@ -1,0 +1,26 @@
+{
+    "apartmentDetails": {
+      "id": 1,
+      "name": "Avenida Collins 19370, Ocean Reserve Condo",
+      "location": "Sunny Isles",
+      "area": 100,
+      "areaUnit": "metros cuadrados",
+      "bedrooms": 1,
+      "beds": {
+        "queen": 2,
+        "sofaBed": 1
+      },
+      "amenities": [
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento incluido",
+        "Piscina climatizada",
+        "Cancha de tenis",
+        "Mini market",
+        "Bar",
+        "Balcón"
+      ],
+      "description": "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido."
+    }
+  }

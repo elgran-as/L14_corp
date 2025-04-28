@@ -1,0 +1,149 @@
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalle Departamento - L14 Corp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+   
+</head>
+
+<body class="bg-white text-slate-900 min-h-screen flex flex-col">
+    <header class="fixed top-0 left-0 w-full bg-white border-b border-slate-200 shadow z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap sm:flex-nowrap gap-3">
+            <img alt="Logo L14 Corp, estilizado con letras L14 en azul oscuro" class="h-10 w-auto" height="40"
+                src="/assets/images/L14_corp.png" width="80" />
+            <div class="flex items-center gap-4">
+                <select aria-label="Cambiar idioma"
+                    class="border border-slate-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <option selected value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                </select>
+                <a href="apartments.html" class="text-blue-900 font-semibold hover:underline text-sm sm:text-base">
+                    ← Volver a Departamentos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 flex-grow">
+        <h1 class="font-extrabold text-2xl sm:text-3xl mb-6 text-center">
+            Sobre Avenida Collins 19370, Ocean Reserve Condo
+        </h1>
+        <p class="text-center text-slate-700 max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
+            Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama
+            queen. Totalmente equipado.
+            <br />
+            Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido.
+        </p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/1.jpg" alt="Vista principal del apartamento 1" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/2.jpg" alt="Sala de estar del apartamento 1" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/3.jpg" alt="Dormitorio del apartamento 1" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/4.jpg" alt="Cocina del apartamento 1" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/5.jpg" alt="Baño del apartamento 1" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/6.jpg" alt="Balcón del apartamento 1" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/7.jpg" alt="Vista de la piscina" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/apartments/apt1/8.jpg" alt="Vista del edificio" loading="lazy" />
+            </div>
+        </div>
+
+        <div class="amenities-section mt-12">
+            <h2 class="text-xl font-semibold mb-6 text-center">Comodidades</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-utensils text-blue-900"></i>
+                    <span>Cocina completa</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-wifi text-blue-900"></i>
+                    <span>WiFi de alta velocidad</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-tv text-blue-900"></i>
+                    <span>TV por cable</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-snowflake text-blue-900"></i>
+                    <span>Aire acondicionado</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-washer text-blue-900"></i>
+                    <span>Lavadora/Secadora</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-parking text-blue-900"></i>
+                    <span>Estacionamiento incluido</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section mt-12 text-center">
+            <button class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
+                Reservar ahora
+            </button>
+        </div>
+    </main>
+
+    <footer class="text-center text-slate-500 text-sm mb-14 px-2">
+        © 2024 L14 Corp. Todos los derechos reservados.
+    </footer>
+
+    <nav aria-label="Navegación inferior" class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-inner z-40">
+        <ul class="flex justify-around max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 gap-3">
+            <li class="flex-1">
+                <a href="/index.html" title="Inicio"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-home text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/apartments.html" title="Departamentos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-blue-900 bg-blue-900 text-white focus:outline-none transition">
+                    <i class="fas fa-building text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/cars.html" title="Autos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-car text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/about.html" title="Quienes Somos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-info-circle text-lg"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="apartmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+            <p id="modalDescription" class="text-slate-700 mb-6"></p>
+            <div id="modalGallery" class="gallery-grid"></div>
+        </div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
