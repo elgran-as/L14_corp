@@ -1,8 +1,31 @@
 {
-    "apartmentDetails": {
+  "apartmentDetails": [
+    {
       "id": 1,
-      "name": "Avenida Collins 19370, Ocean Reserve Condo",
+      "name": "Sian Oceanfront Condos",
+      "location": "Hollywood, FL",
+      "address": "4001 S Ocean Dr, Hollywood, FL 33019",
+      "pricing": {
+        "nightly": 175,
+        "expenses": 180,
+        "fob": 30,
+        "parking": 10
+      },
+      "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento disponible"
+      ],
+      "description": "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios."
+    },
+    {
+      "id": 2,
+      "name": "Ocean Reserve Condo",
       "location": "Sunny Isles",
+      "address": "Avenida Collins 19370",
       "area": 100,
       "areaUnit": "metros cuadrados",
       "bedrooms": 1,
@@ -11,6 +34,8 @@
         "sofaBed": 1
       },
       "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
         "TV por cable",
         "Aire acondicionado",
         "Lavadora/Secadora",
@@ -22,5 +47,54 @@
         "Balcón"
       ],
       "description": "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido."
+    },
+    {
+      "id": 3,
+      "name": "Ocean Reserve Condo",
+      "location": "Sunny Isles",
+      "address": "Avenida Collins 19370",
+      "area": 100,
+      "areaUnit": "metros cuadrados",
+      "bedrooms": 1,
+      "beds": {
+        "queen": 2,
+        "sofaBed": 1
+      },
+      "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento incluido",
+        "Piscina climatizada",
+        "Cancha de tenis",
+        "Mini market",
+        "Bar",
+        "Balcón"
+      ],
+      "description": "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido."
+    },
+    {
+      "id": 4,
+      "name": "Sian Oceanfront Condos",
+      "location": "Hollywood, FL",
+      "address": "4001 S Ocean Dr, Hollywood, FL 33019",
+      "pricing": {
+        "nightly": 175,
+        "expenses": 180,
+        "fob": 30,
+        "parking": 10
+      },
+      "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento disponible"
+      ],
+      "description": "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios."
     }
-  }
+  ]
+}

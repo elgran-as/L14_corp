@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,12 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
-   
 </head>
 
 <body class="bg-white text-slate-900 min-h-screen flex flex-col">
     <header class="fixed top-0 left-0 w-full bg-white border-b border-slate-200 shadow z-30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap sm:flex-nowrap gap-3">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap sm:flex-nowrap gap-3">
             <img alt="Logo L14 Corp, estilizado con letras L14 en azul oscuro" class="h-10 w-auto" height="40"
                 src="/assets/images/L14_corp.png" width="80" />
             <div class="flex items-center gap-4">
@@ -28,67 +30,51 @@
             </div>
         </div>
     </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 flex-grow">
-        <h1 class="font-extrabold text-2xl sm:text-3xl mb-6 text-center">
-            Sobre Avenida Collins 19370, Ocean Reserve Condo
-        </h1>
-        <p class="text-center text-slate-700 max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
-            Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama
-            queen. Totalmente equipado.
-            <br />
-            Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido.
-        </p>
-
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/1.jpg" alt="Vista principal del apartamento 1" loading="lazy" />
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+        <!-- Galería de imágenes -->
+        <div class="image-gallery mb-8">
+            <div class="main-image-container mb-4">
+                <img id="mainImage" src="" alt="Imagen principal del departamento"
+                    class="w-full h-64 sm:h-96 object-cover rounded-lg cursor-pointer">
             </div>
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/2.jpg" alt="Sala de estar del apartamento 1" loading="lazy" />
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/3.jpg" alt="Dormitorio del apartamento 1" loading="lazy" />
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/4.jpg" alt="Cocina del apartamento 1" loading="lazy" />
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/5.jpg" alt="Baño del apartamento 1" loading="lazy" />
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/6.jpg" alt="Balcón del apartamento 1" loading="lazy" />
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/7.jpg" alt="Vista de la piscina" loading="lazy" />
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/images/apartments/apt1/8.jpg" alt="Vista del edificio" loading="lazy" />
+            <div id="thumbnailContainer" class="grid grid-cols-4 sm:grid-cols-6 gap-2">
+                <!-- Las miniaturas se cargarán dinámicamente aquí -->
             </div>
         </div>
 
-        <div class="amenities-section mt-12">
-            <h2 class="text-xl font-semibold mb-6 text-center">Comodidades</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
-                    <i class="fas fa-utensils text-blue-900"></i>
-                    <span>Cocina completa</span>
+        <h1 class="text-3xl font-bold mb-4 text-center"></h1>
+        <p class="text-slate-600 text-center mb-8"></p>
+
+        <!-- Sección de detalles -->
+        <div class="details-section mt-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-slate-50 p-6 rounded-lg">
+                    <h3 class="font-semibold mb-4">Ubicación</h3>
+                    <p id="addressText" class="text-slate-600"></p>
                 </div>
+                <div class="bg-slate-50 p-6 rounded-lg">
+                    <h3 class="font-semibold mb-4">Precios</h3>
+                    <ul id="pricingList" class="text-slate-600 space-y-2">
+                        <!-- Los precios se cargarán dinámicamente aquí -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Características -->
+        <div class="amenities-section mt-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
                     <i class="fas fa-wifi text-blue-900"></i>
-                    <span>WiFi de alta velocidad</span>
+                    <span>WiFi gratuito</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
-                    <i class="fas fa-tv text-blue-900"></i>
-                    <span>TV por cable</span>
+                    <i class="fas fa-swimming-pool text-blue-900"></i>
+                    <span>Piscina</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
-                    <i class="fas fa-snowflake text-blue-900"></i>
-                    <span>Aire acondicionado</span>
-                </div>
-                <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
-                    <i class="fas fa-washer text-blue-900"></i>
-                    <span>Lavadora/Secadora</span>
+                    <i class="fas fa-dumbbell text-blue-900"></i>
+                    <span>Gimnasio</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
                     <i class="fas fa-parking text-blue-900"></i>
@@ -96,19 +82,37 @@
                 </div>
             </div>
         </div>
-
+        <div id="thumbnailContainer" class="grid grid-cols-4 sm:grid-cols-6 gap-2">
+            <!-- Las miniaturas se cargarán dinámicamente aquí -->
+        </div>
+        <!-- Botón de reserva -->
         <div class="booking-section mt-12 text-center">
-            <button class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
+            <button id="bookNowBtn" class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
                 Reservar ahora
             </button>
         </div>
     </main>
 
-    <footer class="text-center text-slate-500 text-sm mb-14 px-2">
-        © 2024 L14 Corp. Todos los derechos reservados.
+    <footer class="text-center text-slate-500 text-sm mb-20 px-2">
+        <p>© 2025 L14 Corp. Todos los derechos reservados.</p>
+        <div class="flex justify-center gap-4 mt-3">
+            <a href="https://x.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en X (Twitter)">
+                <i class="fab fa-twitter text-lg"></i>
+            </a>
+            <a href="https://instagram.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Instagram">
+                <i class="fab fa-instagram text-lg"></i>
+            </a>
+            <a href="https://facebook.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Facebook">
+                <i class="fab fa-facebook text-lg"></i>
+            </a>
+        </div>
     </footer>
 
-    <nav aria-label="Navegación inferior" class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-inner z-40">
+    <nav aria-label="Navegación inferior"
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-inner z-40">
         <ul class="flex justify-around max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 gap-3">
             <li class="flex-1">
                 <a href="/index.html" title="Inicio"
@@ -118,7 +122,7 @@
             </li>
             <li class="flex-1">
                 <a href="/pages/apartments.html" title="Departamentos"
-                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-blue-900 bg-blue-900 text-white focus:outline-none transition">
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-building text-lg"></i>
                 </a>
             </li>
@@ -129,6 +133,12 @@
                 </a>
             </li>
             <li class="flex-1">
+                <a href="/pages/planning.html" title="Planificación"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-calendar-alt text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
                 <a href="/pages/about.html" title="Quienes Somos"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-info-circle text-lg"></i>
@@ -136,14 +146,266 @@
             </li>
         </ul>
     </nav>
+
     <div id="apartmentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
             <p id="modalDescription" class="text-slate-700 mb-6"></p>
-            <div id="modalGallery" class="gallery-grid"></div>
         </div>
     </div>
-    <script src="/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const aptId = urlParams.get('id') || '1';
+
+            const apartments = {
+                '1': {
+                    name: "Sian Oceanfront Condos",
+                    reference: "LAF",
+                    building: "Sian Oceanfront Condos",
+                    address: "4001 S Ocean Dr, Hollywood, FL 33019",
+                    description: "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios.",
+                    pricing: {
+                        nightly: 175,
+                        expenses: 180,
+                        fob: 30,
+                        parking: 10
+                    },
+                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento disponible']
+                },
+                '2': {
+                    reference: "MAM",
+                    building: "Ocean Reserve Condo",
+                    address: "Avenida Collins 19370, Sunny Isles",
+                    pricing: {
+                        nightly: 150,
+
+                    },
+                    description: "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido.",
+                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento incluido']
+                },
+                '3': {
+                    reference: "LAF",
+                    building: "Sian Oceanfront Condos",
+                    address: "4001 S Ocean Dr, Hollywood, FL 33019",
+                    pricing: {
+                        nightly: 175,
+                        expenses: 180,
+                        fob: 30,
+                        parking: 10
+                    },
+                    description: "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios.",
+                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento disponible']
+                },
+                '4': {
+                    reference: "MAM",
+                    building: "Ocean Reserve Condo",
+                    address: "Avenida Collins 19370, Sunny Isles",
+                    pricing: {
+                        nightly: 150,
+
+                    },
+                    description: "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido.",
+                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento incluido']
+                }
+            };
+
+            function loadImages() {
+                const mainImage = document.getElementById('mainImage');
+                const thumbnailContainer = document.getElementById('thumbnailContainer');
+
+                mainImage.src = `/assets/images/apartments/apt${aptId}/1.jpeg`;
+                mainImage.alt = `Vista principal del departamento ${aptId}`;
+                mainImage.className = 'w-full h-64 sm:h-96 object-cover rounded-lg cursor-pointer';
+
+                thumbnailContainer.innerHTML = '';
+
+                // Cargar hasta 12 miniaturas
+                for (let i = 1; i <= 12; i++) {
+                    const imgPath = `/assets/images/apartments/apt${aptId}/${i}.jpeg`;
+                    const thumbnail = document.createElement('div');
+                    thumbnail.className = 'cursor-pointer';
+
+                    const img = document.createElement('img');
+                    img.src = imgPath;
+                    img.alt = `Vista ${i} del departamento ${aptId}`;
+                    img.className = 'w-full h-16 object-cover rounded-lg hover:opacity-75 transition';
+
+                    img.onerror = function () {
+                        thumbnail.remove();
+                    };
+
+                    thumbnail.onclick = function () {
+                        mainImage.src = imgPath;
+                        mainImage.alt = `Vista ${i} del departamento ${aptId}`;
+                    };
+
+                    thumbnail.appendChild(img);
+                    thumbnailContainer.appendChild(thumbnail);
+                }
+            }
+
+            function updateDetails() {
+                const aptData = apartments[aptId];
+
+                // Mostrar referencia y edificio
+                const title = document.querySelector('h1');
+                title.innerHTML = `<span class="text-lg text-blue-900">Ref: ${aptData.reference}</span><br>${aptData.building}`;
+
+                // Mostrar dirección y descripción
+                document.getElementById('addressText').textContent = aptData.address;
+
+
+                // Actualizar precios
+                const pricingList = document.getElementById('pricingList');
+                pricingList.innerHTML = '';
+
+                if (aptData.pricing) {
+                    const prices = [
+                        { label: 'Por noche', value: aptData.pricing.nightly },
+                        { label: 'Gastos', value: aptData.pricing.expenses },
+                        { label: 'FOB (único pago)', value: aptData.pricing.fob },
+                        { label: 'Estacionamiento por día', value: aptData.pricing.parking }
+                    ];
+
+                    prices.forEach(price => {
+                        if (price.value) {
+                            const li = document.createElement('li');
+                            li.textContent = `${price.label}: $${price.value} USD`;
+                            pricingList.appendChild(li);
+                        }
+                    });
+                }
+
+                // Actualizar amenities
+                const amenitiesContainer = document.querySelector('.amenities-section .grid');
+                amenitiesContainer.innerHTML = '';
+
+                const amenityIcons = {
+                    'Cocina completa': 'fa-utensils',
+                    'WiFi de alta velocidad': 'fa-wifi',
+                    'TV por cable': 'fa-tv',
+                    'Aire acondicionado': 'fa-snowflake',
+                    'Lavadora/Secadora': 'fa-washer',
+                    'Estacionamiento incluido': 'fa-parking',
+                    'Estacionamiento disponible': 'fa-parking'
+                };
+
+                aptData.amenities.forEach(amenity => {
+                    const div = document.createElement('div');
+                    div.className = 'flex items-center gap-3 p-4 bg-slate-50 rounded-lg';
+
+                    const icon = document.createElement('i');
+                    icon.className = `fas ${amenityIcons[amenity] || 'fa-check'} text-blue-900`;
+
+                    const span = document.createElement('span');
+                    span.textContent = amenity;
+
+                    div.appendChild(icon);
+                    div.appendChild(span);
+                    amenitiesContainer.appendChild(div);
+                });
+            }
+
+            function setupModal() {
+                const modal = document.getElementById('apartmentModal');
+                const closeModal = document.querySelector('.close-modal');
+                const mainImage = document.getElementById('mainImage');
+                const modalGallery = document.getElementById('modalGallery');
+                const aptData = apartments[aptId];
+
+                mainImage.onclick = function () {
+                    modal.style.display = 'flex';
+                    document.getElementById('modalTitle').textContent = aptData.building;
+                    document.getElementById('modalDescription').textContent = aptData.description;
+
+                    modalGallery.innerHTML = '';
+                    for (let i = 1; i <= 12; i++) {
+                        const imgPath = `/assets/images/apartments/apt${aptId}/${i}.jpeg`;
+                        const img = document.createElement('img');
+                        img.src = imgPath;
+                        img.alt = `Vista ${i} del departamento ${aptId}`;
+                        img.className = 'w-full rounded-lg cursor-pointer';
+
+                        img.onerror = function () {
+                            img.remove();
+                        };
+
+                        modalGallery.appendChild(img);
+                    }
+                };
+
+                closeModal.onclick = function () {
+                    modal.style.display = 'none';
+                };
+
+                window.onclick = function (event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                };
+            }
+
+            function handleBooking() {
+        const aptData = apartments[aptId];
+        if (!aptData) {
+            alert('Error: No se encontró la información del departamento');
+            return;
+        }
+
+        try {
+            // Asegurarse de que todos los valores estén definidos antes de la conversión
+            const pricing = aptData.pricing || {};
+            const queryParams = new URLSearchParams({
+                apt: aptId,
+                ref: aptData.reference || '',
+                building: aptData.building || '',
+                address: aptData.address || '',
+                image: `/assets/images/apartments/apt${aptId}/1.jpeg`,
+                type: 'apartment',
+                price: (pricing.nightly || '').toString(),
+                expenses: (pricing.expenses || '').toString(),
+                fob: (pricing.fob || '').toString(),
+                parking: (pricing.parking || '').toString()
+            });
+
+            // Asegurarse de que los arrays y objetos se serialicen correctamente
+            if (aptData.amenities && Array.isArray(aptData.amenities)) {
+                queryParams.append('amenities', JSON.stringify(aptData.amenities));
+            }
+
+            if (aptData.description) {
+                queryParams.append('description', aptData.description);
+            }
+
+            const planningUrl = `/pages/planning.html?${queryParams.toString()}`;
+            console.log('Datos enviados:', Object.fromEntries(queryParams.entries())); // Debug
+            window.location.href = planningUrl;
+        } catch (error) {
+            console.error('Error al procesar la redirección:', error);
+            alert('Hubo un error al procesar la reserva. Por favor, inténtelo de nuevo.');
+        }
+    }
+
+    // Inicializar la página si el apartamento existe
+    if (apartments[aptId]) {
+        loadImages();
+        updateDetails();
+        setupModal();
+        
+        // Configurar el botón de reserva
+        const bookNowBtn = document.getElementById('bookNowBtn');
+        if (bookNowBtn) {
+            bookNowBtn.onclick = handleBooking;
+        }
+    } else {
+        console.error('Apartamento no encontrado:', aptId);
+        window.location.href = '/pages/apartments.html';
+    }
+});
+    </script>
 </body>
+
 </html>

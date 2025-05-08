@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalle Departamento - L14 Corp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body class="bg-white text-slate-900 min-h-screen flex flex-col">
+    <header class="fixed top-0 left-0 w-full bg-white border-b border-slate-200 shadow z-30">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap sm:flex-nowrap gap-3">
+            <img alt="Logo L14 Corp, estilizado con letras L14 en azul oscuro" class="h-10 w-auto" height="40"
+                src="/assets/images/L14_corp.png" width="80" />
+            <div class="flex items-center gap-4">
+                <select aria-label="Cambiar idioma"
+                    class="border border-slate-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <option selected value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                </select>
+                <a href="cars.html" class="text-blue-900 font-semibold hover:underline text-sm sm:text-base">
+                    ← Volver a Autos
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+        <!-- Galería de imágenes -->
+        <div class="image-gallery mb-8">
+            <div class="main-image-container mb-4">
+                <img id="mainImage" src="" alt="Imagen principal del auto"
+                    class="w-full h-64 sm:h-96 object-cover rounded-lg cursor-pointer">
+            </div>
+            <div id="thumbnailContainer" class="grid grid-cols-4 sm:grid-cols-6 gap-2">
+                <!-- Las miniaturas se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+
+        <h1 class="text-3xl font-bold mb-4 text-center"></h1>
+        <p class="text-slate-600 text-center mb-8"></p>
+
+        <!-- Sección de detalles -->
+        <div class="details-section mt-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-slate-50 p-6 rounded-lg">
+                    <h3 class="font-semibold mb-4">Precios</h3>
+                    <ul id="pricingList" class="text-slate-600 space-y-2">
+                        <!-- Los precios se cargarán dinámicamente aquí -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Botón de reserva -->
+        <div class="booking-section mt-12 text-center">
+            <button id="bookNowBtn" class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
+                Reservar ahora
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="text-center text-slate-500 text-sm mb-20 px-2">
+        <p>© 2025 L14 Corp. Todos los derechos reservados.</p>
+        <div class="flex justify-center gap-4 mt-3">
+            <a href="https://x.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en X (Twitter)">
+                <i class="fab fa-twitter text-lg"></i>
+            </a>
+            <a href="https://instagram.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Instagram">
+                <i class="fab fa-instagram text-lg"></i>
+            </a>
+            <a href="https://facebook.com/L14Corp" target="_blank" rel="noopener noreferrer"
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Facebook">
+                <i class="fab fa-facebook text-lg"></i>
+            </a>
+        </div>
+    </footer>
+
+    <nav aria-label="Navegación inferior"
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-inner z-40">
+        <ul class="flex justify-around max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 gap-3">
+            <li class="flex-1">
+                <a href="/index.html" title="Inicio"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-home text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/apartments.html" title="Departamentos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-building text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/cars.html" title="Autos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-car text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/planning.html" title="Planificación"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-calendar-alt text-lg"></i>
+                </a>
+            </li>
+            <li class="flex-1">
+                <a href="/pages/about.html" title="Quienes Somos"
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-info-circle text-lg"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="apartmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+            <p id="modalDescription" class="text-slate-700 mb-6"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const carId = urlParams.get('id');
+    
+    // Función para extraer el precio del texto de descripción
+    function extractPrice(description) {
+        const match = description.match(/\$(\d+)/);
+        return match ? match[1] : null;
+    }
+
+    if (carId && titles[carId]) {
+        // Actualizar el título de la página y el encabezado
+        document.title = `${titles[carId]} - L14 Corp`;
+        const title = document.querySelector('h1');
+        title.textContent = titles[carId];
+
+        // Actualizar la descripción
+        const description = document.querySelector('p.text-slate-600.text-center');
+        if (description) {
+            description.textContent = descriptions[carId];
+        }
+
+        // Configurar la galería de imágenes
+        const mainImage = document.getElementById('mainImage');
+        const thumbnailContainer = document.getElementById('thumbnailContainer');
+        
+        // Establecer la imagen principal
+        const mainImageUrl = `/assets/images/cars/car${carId}/1.jpeg`;
+        mainImage.src = mainImageUrl;
+        mainImage.alt = `${titles[carId]} - Vista principal`;
+
+        // Limpiar y generar miniaturas
+        thumbnailContainer.innerHTML = '';
+        for (let i = 1; i <= 4; i++) {
+            const imgUrl = `/assets/images/cars/car${carId}/${i}.jpeg`;
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'cursor-pointer';
+
+            const img = document.createElement('img');
+            img.src = imgUrl;
+            img.alt = `${titles[carId]} - Vista ${i}`;
+            img.className = 'w-full h-16 object-cover rounded-lg hover:opacity-75 transition';
+
+            img.onerror = function() {
+                thumbnail.remove();
+            };
+
+            thumbnail.onclick = function() {
+                mainImage.src = imgUrl;
+                mainImage.alt = `${titles[carId]} - Vista ${i}`;
+            };
+
+            thumbnail.appendChild(img);
+            thumbnailContainer.appendChild(thumbnail);
+        }
+
+        // Actualizar la lista de precios
+        const pricingList = document.getElementById('pricingList');
+        const price = extractPrice(descriptions[carId]);
+        if (price && pricingList) {
+            pricingList.innerHTML = `
+                <li>Por día: $${price} USD</li>
+                <li>Por semana: $${price * 7} USD</li>
+                <li>Por mes: $${price * 30} USD</li>
+            `;
+        }
+
+        // Configurar el botón de reserva
+        const bookNowBtn = document.getElementById('bookNowBtn');
+        if (bookNowBtn) {
+            bookNowBtn.addEventListener('click', function() {
+                // Extraer características del auto
+                const features = descriptions[carId]
+                    .split('.')
+                    .filter(feature => feature.trim())
+                    .map(feature => feature.trim())
+                    .join(',');
+
+                // Obtener la URL absoluta de la imagen actual
+                const currentImage = document.getElementById('mainImage');
+                const imageUrl = currentImage.src;
+
+                // Construir la URL con los parámetros necesarios
+                const planningUrl = new URL('/pages/planning.html', window.location.origin);
+                planningUrl.searchParams.set('car', carId);
+                planningUrl.searchParams.set('title', titles[carId]);
+                planningUrl.searchParams.set('features', features);
+                planningUrl.searchParams.set('image', imageUrl);
+                planningUrl.searchParams.set('price', price);
+
+                // Redirigir a la página de planificación
+                window.location.href = planningUrl.toString();
+            });
+        }
+    } else {
+        // Redirigir a la página de autos si no se encuentra el ID
+        window.location.href = '/pages/cars.html';
+    }
+});
+   
+            // Definir títulos y descripciones de los autos
+            const titles = {
+                '1': 'Ford Escape',
+                '2': 'Nissan Rogue',
+                '3': 'Dodge Grand Caravan',
+                '4': 'BMW X1',
+                '5': 'Nissan Murano',
+                '6': 'Range Rover Evoque',
+                '7': 'Audi SQ5',
+                '8': 'Volkswagen Tiguan',
+                '9': 'Chevrolet Equinox',
+                '10': 'Hyundai Elantra',
+                '11': 'Dodge Grand Caravan Premium',
+                '12': 'Hyundai Palisade',
+                '13': 'Audi A4',
+                '14': 'Acura MDX',
+                '15': 'Porsche Macan',
+                '16': 'Chevrolet Sonic',
+                '17': 'Mazda 3',
+                '18': 'Ford Mustang',
+                '19': 'Hyundai Accent',
+                '20': 'Mitsubishi Outlander',
+                '21': 'BMW X5',
+                '22': 'Nissan Sentra',
+                '23': 'Nissan Pathfinder',
+                '24': 'Honda Civic',
+                '25': 'Porsche 718 Boxster',
+                '26': 'Kia Sedona',
+                '27': 'Jeep Grand Cherokee',
+                '28': 'Jeep Cherokee',
+                '29': 'Cadillac Escalade XL',
+                '30': 'Toyota Corolla',
+                '31': 'Toyota Sienna',
+                '32': 'Chevrolet Camaro',
+                '33': 'Nissan Versa',
+                '34': 'Dodge Journey',
+                '35': 'Kia Forte',
+                '36': 'Hyundai Santa Fe',
+                '37': 'Nissan Kicks',
+                '38': 'Ferrari California Turbo'
+            };
+
+            const descriptions = {
+                '1': 'SUV compacta con excelente economía de combustible. Seguro y Sunpass incluidos. $75 por día.',
+                '2': 'SUV versátil y confortable. Seguro y Sunpass incluidos. $75 por día.',
+                '3': 'Minivan espaciosa ideal para familias. Seguro y Sunpass incluidos. $75 por día.',
+                '4': 'SUV de lujo con alto rendimiento. Seguro y Sunpass incluidos. $85 por día.',
+                '5': 'SUV crossover con diseño moderno. Seguro y Sunpass incluidos. $85 por día.',
+                '6': 'SUV de lujo con diseño distintivo. Seguro y Sunpass incluidos. $105 por día.',
+                '7': 'SUV deportivo de alto rendimiento. Seguro y Sunpass incluidos. $105 por día.',
+                '8': 'SUV alemán con tecnología avanzada. Seguro y Sunpass incluidos. $80 por día.',
+                '9': 'SUV familiar con buen espacio interior. Seguro y Sunpass incluidos. $80 por día.',
+                '10': 'Sedán compacto con excelente economía. Seguro y Sunpass incluidos. $75 por día.',
+                '11': 'Minivan premium con características adicionales. Seguro y Sunpass incluidos. $90 por día.',
+                '12': 'SUV de lujo con tres filas de asientos. Seguro y Sunpass incluidos. $120 por día.',
+                '13': 'Sedán de lujo con tecnología de punta. Seguro y Sunpass incluidos. $90 por día.',
+                '14': 'SUV de lujo con excelente manejo. Seguro y Sunpass incluidos. $100 por día.',
+                '15': 'SUV deportivo de alto rendimiento. Seguro y Sunpass incluidos. $150 por día.',
+                '16': 'Compacto económico y ágil. Seguro y Sunpass incluidos. $65 por día.',
+                '17': 'Sedán deportivo con diseño elegante. Seguro y Sunpass incluidos. $75 por día.',
+                '18': 'Muscle car icónico americano. Seguro y Sunpass incluidos. $120 por día.',
+                '19': 'Sedán compacto económico. Seguro y Sunpass incluidos. $65 por día.',
+                '20': 'SUV versátil con tres filas. Seguro y Sunpass incluidos. $85 por día.',
+                '21': 'SUV de lujo con alto rendimiento. Seguro y Sunpass incluidos. $100 por día.',
+                '22': 'Sedán compacto con buen rendimiento. Seguro y Sunpass incluidos. $70 por día.',
+                '23': 'SUV familiar espacioso. Seguro y Sunpass incluidos. $90 por día.',
+                '24': 'Sedán confiable y eficiente. Seguro y Sunpass incluidos. $75 por día.',
+                '25': 'Deportivo convertible de lujo. Seguro y Sunpass incluidos. $275 por día.',
+                '26': 'Minivan familiar con características premium. Seguro y Sunpass incluidos. $110 por día.',
+                '27': 'SUV robusto con capacidades off-road. Seguro y Sunpass incluidos. $130 por día.',
+                '28': 'SUV compacto con capacidad todoterreno. Seguro y Sunpass incluidos. $80 por día.',
+                '29': 'SUV de lujo de tamaño completo. Seguro y Sunpass incluidos. $200 por día.',
+                '30': 'Sedán confiable y económico. Seguro y Sunpass incluidos. $75 por día.',
+                '31': 'Minivan espaciosa y confortable. Seguro y Sunpass incluidos. $100 por día.',
+                '32': 'Muscle car deportivo americano. Seguro y Sunpass incluidos. $120 por día.',
+                '33': 'Sedán compacto económico. Seguro y Sunpass incluidos. $70 por día.',
+                '34': 'SUV crossover versátil. Seguro y Sunpass incluidos. $75 por día.',
+                '35': 'Sedán compacto con buen equipamiento. Seguro y Sunpass incluidos. $75 por día.',
+                '36': 'SUV mediano con tecnología avanzada. Seguro y Sunpass incluidos. $89 por día.',
+                '37': 'SUV compacto urbano. Seguro y Sunpass incluidos. $70 por día.',
+                '38': 'Superdeportivo convertible de lujo. Seguro y Sunpass incluidos. $1000 por día.'
+            };
+
+            const car = cars[carId];
+            if (car) {
+                document.title = `${car.name} - L14 Corp`;
+                document.querySelector('h1').textContent = car.name;
+                document.querySelector('p').textContent = car.description;
+                document.getElementById('addressText').textContent = car.address;
+                
+                // Configurar imagen principal
+                const mainImage = document.getElementById('mainImage');
+                mainImage.src = car.images[0];
+                mainImage.alt = `${car.name} - Imagen principal`;
+
+                // Generar miniaturas
+                const thumbnailContainer = document.getElementById('thumbnailContainer');
+                car.images.forEach((image, index) => {
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = image;
+                    thumbnail.alt = `${car.name} - Imagen ${index + 1}`;
+                    thumbnail.className = 'w-full h-20 object-cover rounded cursor-pointer hover:opacity-75 transition';
+                    thumbnail.addEventListener('click', () => {
+                        mainImage.src = image;
+                        mainImage.alt = `${car.name} - Imagen ${index + 1}`;
+                    });
+                    thumbnailContainer.appendChild(thumbnail);
+                });
+
+                // Llenar lista de precios
+                const pricingList = document.getElementById('pricingList');
+                car.pricing.forEach(price => {
+                    const li = document.createElement('li');
+                    li.textContent = price;
+                    pricingList.appendChild(li);
+                });
+            }
+        
+    </script>
+</body>
+
+</html>

@@ -40,10 +40,12 @@
             Autos en Alquiler
         </h1>
         <section aria-label="Autos en alquiler" class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+            <!-- FORD ESCAPE -->
             <article
                 class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
                 <img alt="Ford Escape" class="car-image w-full" height="300" loading="lazy"
-                    src="https://storage.googleapis.com/a1aa/image/95de1007-9a4c-49ec-ccb3-e76582256603.jpg"
+                    src="/assets/images/cars/car1/1.jpeg"
                     width="400" />
                 <h2 class="font-semibold text-base mb-1">
                     Ford Escape
@@ -51,16 +53,23 @@
                 <p class="text-blue-900 font-bold text-sm mb-3">
                     $75 por día
                 </p>
-                <button
-                    class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition"
-                    type="button">
-                    Consultar disponibilidad
-                </button>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=1"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                        Ver detalles
+                    </a>
+                    <a href="/pages/planning.html?car=1&title=Ford Escape&features=SUV,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">
+                        Consultar disponibilidad
+                    </a>
+                </div>
             </article>
+
+            <!-- NISSAN ROGUE -->
             <article
                 class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
                 <img alt="Nissan Rogue" class="car-image w-full" height="300" loading="lazy"
-                    src="https://storage.googleapis.com/a1aa/image/b466f351-f1a7-4e8d-2dc3-c5b5be0742f4.jpg"
+                    src="/assets/images/cars/car2/2.jpeg"
                     width="400" />
                 <h2 class="font-semibold text-base mb-1">
                     Nissan Rogue
@@ -68,12 +77,19 @@
                 <p class="text-blue-900 font-bold text-sm mb-3">
                     $75 por día
                 </p>
-                <button
-                    class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition"
-                    type="button">
-                    Consultar disponibilidad
-                </button>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=2"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                        Ver detalles
+                    </a>
+                    <a href="/pages/planning.html?car=2&title=Nissan Rogue&features=SUV,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">
+                        Consultar disponibilidad
+                    </a>
+                </div>
             </article>
+
+            <!-- DODGE GRAND CARAVAN -->
             <article
                 class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
                 <img alt="Dodge Grand Caravan" class="car-image w-full" height="300" loading="lazy"
@@ -85,12 +101,19 @@
                 <p class="text-blue-900 font-bold text-sm mb-3">
                     $75 por día
                 </p>
-                <button
-                    class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition"
-                    type="button">
-                    Consultar disponibilidad
-                </button>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=3"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                        Ver detalles
+                    </a>
+                    <a href="/pages/planning.html?car=3&title=Dodge Grand Caravan&features=Minivan,Automático,7 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">
+                        Consultar disponibilidad
+                    </a>
+                </div>
             </article>
+
+            <!-- BMW X1 -->
             <article
                 class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
                 <img alt="Bmw X1" class="car-image w-full" height="300" loading="lazy"
@@ -102,16 +125,598 @@
                 <p class="text-blue-900 font-bold text-sm mb-3">
                     $85 por día
                 </p>
-                <button
-                    class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition"
-                    type="button">
-                    Consultar disponibilidad
-                </button>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=4"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                        Ver detalles
+                    </a>
+                    <a href="/pages/planning.html?car=4&title=BMW X1&features=SUV,Automático,5 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">
+                        Consultar disponibilidad
+                    </a>
+                </div>
+            </article>
+
+            <!-- Nissan Murano -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Nissan Murano" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/nissan-murano.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Nissan Murano</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$85 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=5"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=5&title=Nissan Murano&features=SUV,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Range Rover Evoque -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Range Rover Evoque" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/range-rover-evoque.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Range Rover Evoque</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$105 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=6"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=6&title=Range Rover Evoque&features=SUV,Automático,5 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Audi SQ5 -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Audi SQ5" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/audi-sq5.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Audi SQ5</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$105 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=7"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=7&title=Audi SQ5&features=SUV,Automático,5 pasajeros,Lujo,Deportivo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Volkswagen Tiguan -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Volkswagen Tiguan" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/volkswagen-tiguan.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Volkswagen Tiguan</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$80 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=8"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=8&title=Volkswagen Tiguan&features=SUV,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Chevrolet Equinox -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Chevrolet Equinox" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/chevrolet-equinox.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Chevrolet Equinox</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$80 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=9"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=9&title=Chevrolet Equinox&features=SUV,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Hyundai Elantra -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Hyundai Elantra" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/hyundai-elantra.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Hyundai Elantra</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$75 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=10"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=10&title=Hyundai Elantra&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Dodge Grand Caravan Premium -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Dodge Grand Caravan Premium" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/dodge-grand-caravan-premium.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Dodge Grand Caravan Premium</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$90 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=11"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=11&title=Dodge Grand Caravan Premium&features=Minivan,Automático,7 pasajeros,Premium"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Hyundai Palisade -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Hyundai Palisade" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/hyundai-palisade.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Hyundai Palisade</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$120 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=12"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=12&title=Hyundai Palisade&features=SUV,Automático,8 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Audi A4 -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Audi A4" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/audi-a4.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Audi A4</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$90 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=13"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=13&title=Audi A4&features=Sedán,Automático,5 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Acura MDX -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Acura MDX" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/acura-mdx.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Acura MDX</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$100 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=14"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=14&title=Acura MDX&features=SUV,Automático,7 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Porsche Macan -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Porsche Macan" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/porsche-macan.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Porsche Macan</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$150 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=15"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=15&title=Porsche Macan&features=SUV,Automático,5 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Chevrolet Sonic -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Chevrolet Sonic" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/chevrolet-sonic.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Chevrolet Sonic</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$65 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=16"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=16&title=Chevrolet Sonic&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Mazda 3 -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Mazda 3" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/mazda-3.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Mazda 3</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$75 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=17"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=17&title=Mazda 3&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Ford Mustang -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Ford Mustang" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/ford-mustang.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Ford Mustang</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$120 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=18"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=18&title=Ford Mustang&features=Deportivo,Automático,4 pasajeros,Muscle Car"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Hyundai Accent -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Hyundai Accent" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/hyundai-accent.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Hyundai Accent</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$65 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=19"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=19&title=Hyundai Accent&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Mitsubishi Outlander -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Mitsubishi Outlander" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/mitsubishi-outlander.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Mitsubishi Outlander</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$85 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=20"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=20&title=Mitsubishi Outlander&features=SUV,Automático,7 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- BMW X5 -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="BMW X5" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/bmw-x5.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">BMW X5</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$100 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=21"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=21&title=BMW X5&features=SUV,Automático,5 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Nissan Sentra -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Nissan Sentra" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/nissan-sentra.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Nissan Sentra</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$70 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=22"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=22&title=Nissan Sentra&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Nissan Pathfinder -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Nissan Pathfinder" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/nissan-pathfinder.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Nissan Pathfinder</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$90 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=23"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=23&title=Nissan Pathfinder&features=SUV,Automático,7 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Honda Civic" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/honda-civic.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Honda Civic</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$75 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=15"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=15&title=Honda Civic&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Porsche 718 Boxster -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Porsche 718 Boxster" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/porsche-718.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Porsche 718 Boxster</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$275 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=25"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=25&title=Porsche 718 Boxster&features=Deportivo,Automático,2 pasajeros,Convertible"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Kia Sedona -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Kia Sedona" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/kia-sedona.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Kia Sedona</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$110 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=26"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=26&title=Kia Sedona&features=Minivan,Automático,8 pasajeros,Premium"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Jeep Grand Cherokee -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Jeep Grand Cherokee" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/jeep-grand-cherokee.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Jeep Grand Cherokee</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$130 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=27"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=27&title=Jeep Grand Cherokee&features=SUV,Automático,5 pasajeros,Off-road"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Jeep Cherokee -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Jeep Cherokee" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/jeep-cherokee.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Jeep Cherokee</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$80 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=29"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=29&title=Jeep Cherokee&features=SUV,Automático,5 pasajeros,Off-road"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Cadillac Escalade XL -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Cadillac Escalade XL" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/cadillac-escalade.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Cadillac Escalade XL</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$200 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=29"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=29&title=Cadillac Escalade XL&features=SUV,Automático,8 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Toyota Corolla -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Toyota Corolla" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/toyota-corolla.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Toyota Corolla</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$75 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=30"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=30&title=Toyota Corolla&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Toyota Sienna -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Toyota Sienna" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/toyota-sienna.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Toyota Sienna</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$100 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=31"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=31&title=Toyota Sienna&features=Minivan,Automático,8 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Chevrolet Camaro -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Chevrolet Camaro" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/chevrolet-camaro.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Chevrolet Camaro</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$120 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=32"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=32&title=Chevrolet Camaro&features=Deportivo,Automático,4 pasajeros,Muscle Car"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Nissan Versa -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Nissan Versa" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/nissan-versa.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Nissan Versa</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$70 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=33"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=33&title=Nissan Versa&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Dodge Journey -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Dodge Journey" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/dodge-journey.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Dodge Journey</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$75 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=34"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=34&title=Dodge Journey&features=SUV,Automático,7 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Kia Forte -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Kia Forte" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/kia-forte.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Kia Forte</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$75 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=35"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=35&title=Kia Forte&features=Sedán,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Hyundai Santa Fe -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Hyundai Santa Fe" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/hyundai-santa-fe.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Hyundai Santa Fe</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$89 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=36"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=36&title=Hyundai Santa Fe&features=SUV,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Nissan Kicks -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Nissan Kicks" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/nissan-kicks.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Nissan Kicks</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$70 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=37"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=37&title=Nissan Kicks&features=SUV,Automático,5 pasajeros"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
+            </article>
+
+            <!-- Ferrari California Turbo -->
+            <article
+                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                <img alt="Ferrari California Turbo" class="car-image w-full" height="300" loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/ferrari-california.jpg" width="400" />
+                <h2 class="font-semibold text-base mb-1">Ferrari California Turbo</h2>
+                <p class="text-blue-900 font-bold text-sm mb-3">$1000 por día</p>
+                <div class="flex flex-col gap-2">
+                    <a href="/pages/car-detail.html?id=38"
+                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">Ver
+                        detalles</a>
+                    <a href="/pages/planning.html?car=38&title=Ferrari California Turbo&features=Superdeportivo,Automático,2 pasajeros,Lujo"
+                        class="bg-slate-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-slate-800 transition text-center">Consultar
+                        disponibilidad</a>
+                </div>
             </article>
         </section>
     </main>
     <footer class="text-center text-slate-500 text-sm mb-20 px-2">
-        <p>© 2024 L14 Corp. Todos los derechos reservados.</p>
+        <p>© 2025 L14 Corp. Todos los derechos reservados.</p>
         <div class="flex justify-center gap-4 mt-3">
             <a href="https://x.com/L14Corp" target="_blank" rel="noopener noreferrer"
                 class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en X (Twitter)">
@@ -132,20 +737,20 @@
         <ul class="flex justify-around max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 gap-3">
             <li class="flex-1">
                 <a aria-current="page" href="/index.html" title="Inicio"
-                class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
-                <i class="fas fa-home text-lg"></i>
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-home text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
                 <a href="/pages/apartments.html" title="Departamentos"
-                class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
-                <i class="fas fa-building text-lg"></i>
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                    <i class="fas fa-building text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
                 <a href="/pages/cars.html" title="Autos"
-                class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-blue-900 bg-blue-900 text-white focus:outline-none transition">
-                <i class="fas fa-car text-lg"></i>
+                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-blue-900 bg-blue-900 text-white focus:outline-none transition">
+                    <i class="fas fa-car text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">

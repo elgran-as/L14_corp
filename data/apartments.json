@@ -1,58 +1,72 @@
 {
-    "apartments": [
-      {
-        "id": 1,
-        "name": "Departamento 1",
-        "description": "Ubicado en el corazón de Miami, completamente equipado",
-        "price": 150,
-        "priceUnit": "por noche",
-        "image": "https://storage.googleapis.com/a1aa/image/92911942-b439-48bf-2b21-30671ff0dc84.jpg",
-        "location": "Miami"
-      },
-      {
-        "id": 2,
-        "name": "Departamento 2",
-        "description": "Ubicado en el corazón de Miami, completamente equipado",
-        "price": 150,
-        "priceUnit": "por noche",
-        "image": "https://storage.googleapis.com/a1aa/image/9749ad2b-e118-4b81-5f67-04aa5950d8b9.jpg",
-        "location": "Miami"
-      },
-      {
-        "id": 3,
-        "name": "Departamento 3",
-        "description": "Ubicado en el corazón de Miami, completamente equipado",
-        "price": 150,
-        "priceUnit": "por noche",
-        "image": "https://storage.googleapis.com/a1aa/image/56aea74e-1b3b-407d-ff11-22a3323312c8.jpg",
-        "location": "Miami"
-      },
-      {
-        "id": 4,
-        "name": "Departamento 4",
-        "description": "Ubicado en el corazón de Miami, completamente equipado",
-        "price": 150,
-        "priceUnit": "por noche",
-        "image": "https://storage.googleapis.com/a1aa/image/17606822-21dd-477e-1e79-755f4500ff86.jpg",
-        "location": "Miami"
-      },
-      {
-        "id": 5,
-        "name": "Departamento 5",
-        "description": "Ubicado en el corazón de Miami, completamente equipado",
-        "price": 150,
-        "priceUnit": "por noche",
-        "image": "https://storage.googleapis.com/a1aa/image/72fd7e8d-8e07-4c52-9cac-fd3a084f591c.jpg",
-        "location": "Miami"
-      },
-      {
-        "id": 6,
-        "name": "Departamento 6",
-        "description": "Ubicado en el corazón de Miami, completamente equipado",
-        "price": 150,
-        "priceUnit": "por noche",
-        "image": "https://storage.googleapis.com/a1aa/image/a676d469-dac2-4909-469c-1e647e602b35.jpg",
-        "location": "Miami"
-      }
-    ]
-  }
+  "apartments": [
+    {
+      "id": 1,
+      "name": "Sian Oceanfront Condos",
+      "description": "Vista exterior y sala del Departamento 1 ubicado en Miami, completamente equipado",
+      "price": 175,
+      "priceUnit": "por noche",
+      "image": "/assets/images/apartments/apt1/2.jpeg",
+      "location": "4001 S Ocean Dr, Hollywood, FL 33019",
+      "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento disponible"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ocean Reserve Condo",
+      "description": "Vista exterior y sala del Departamento 2 ubicado en Miami, completamente equipado",
+      "price": 150,
+      "priceUnit": "por noche",
+      "image": "/assets/images/apartments/apt2/3.jpeg",
+      "location": "Avenida Collins 19370",
+      "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento incluido"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ocean Reserve Condo",
+      "description": "Vista exterior y sala del Departamento 3 ubicado en Miami, completamente equipado",
+      "price": 150,
+      "priceUnit": "por noche",
+      "image": "/assets/images/apartments/apt3/5.jpeg",
+      "location": "Avenida Collins 19370",
+      "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento incluido"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Sian Oceanfront Condos",
+      "description": "Vista exterior y sala del Departamento 4 ubicado en Miami, completamente equipado",
+      "price": 175,
+      "priceUnit": "por noche",
+      "image": "/assets/images/apartments/apt4/4.jpeg",
+      "location": "4001 S Ocean Dr, Hollywood, FL 33019",
+      "amenities": [
+        "Cocina completa",
+        "WiFi de alta velocidad",
+        "TV por cable",
+        "Aire acondicionado",
+        "Lavadora/Secadora",
+        "Estacionamiento disponible"
+      ]
+    }
+  ]
+}
