@@ -86,10 +86,41 @@
             <!-- Las miniaturas se cargarán dinámicamente aquí -->
         </div>
         <!-- Botón de reserva -->
-        <div class="booking-section mt-12 text-center">
-            <button id="bookNowBtn" class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
-                Reservar ahora
-            </button>
+        <div class="booking-section mt-12">
+            <div class="max-w-md mx-auto bg-slate-50 p-6 rounded-lg mb-6">
+                <h3 class="font-semibold mb-4 text-center">Detalles de la Reserva</h3>
+
+                <!-- Selector de Adultos -->
+                <div class="mb-4">
+                    <label class="block text-slate-700 mb-2">Adultos</label>
+                    <select id="adultsCount" class="w-full p-2 border border-slate-300 rounded-md">
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                        <option value="4">4 Adultos</option>
+                    </select>
+                </div>
+
+                <!-- Selector de Menores -->
+                <div class="mb-4">
+                    <label class="block text-slate-700 mb-2">Menores</label>
+                    <select id="childrenCount" class="w-full p-2 border border-slate-300 rounded-md">
+                        <option value="0">Sin menores</option>
+                        <option value="1">1 Menor</option>
+                        <option value="2">2 Menores</option>
+                        <option value="3">3 Menores</option>
+                    </select>
+                    <div id="childrenAges" class="mt-3 space-y-2">
+                        <!-- Las edades se agregarán dinámicamente aquí -->
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="bookNowBtn"
+                    class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
+                    Reservar ahora
+                </button>
+            </div>
         </div>
     </main>
 
@@ -133,8 +164,8 @@
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/planning.html" title="Planificación"
-                    class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                <a href="#" id="planningLink" title="Planificación"
+                    class="pointer-events-none opacity-50 flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-calendar-alt text-lg"></i>
                 </a>
             </li>
@@ -162,53 +193,117 @@
 
             const apartments = {
                 '1': {
-                    name: "Sian Oceanfront Condos",
-                    reference: "LAF",
-                    building: "Sian Oceanfront Condos",
-                    address: "4001 S Ocean Dr, Hollywood, FL 33019",
-                    description: "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios.",
+                    name: "LAF 7EN SIAN",
+                    reference: "LAF 7EN 1/1",
+                    building: "La Fontaine",
+                    address: "1238 Drexel Ave, Miami Beach, FL 33139",
+                    description: "Hermoso apartamento de 1 habitación y 1 baño en La Fontaine, Miami Beach. Totalmente amueblado y equipado.",
                     pricing: {
                         nightly: 175,
-                        expenses: 180,
+                        expenses: 0,
                         fob: 30,
                         parking: 10
                     },
-                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento disponible']
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio']
                 },
                 '2': {
-                    reference: "MAM",
-                    building: "Ocean Reserve Condo",
-                    address: "Avenida Collins 19370, Sunny Isles",
+                    name: "MAM OR",
+                    reference: "MAM OR 1/1",
+                    building: "Marbella",
+                    address: "Miami Beach, FL",
+                    description: "Acogedor apartamento de 1 habitación y 1 baño en Marbella, Miami Beach. Completamente amueblado.",
                     pricing: {
                         nightly: 150,
-
-                    },
-                    description: "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido.",
-                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento incluido']
-                },
-                '3': {
-                    reference: "LAF",
-                    building: "Sian Oceanfront Condos",
-                    address: "4001 S Ocean Dr, Hollywood, FL 33019",
-                    pricing: {
-                        nightly: 175,
-                        expenses: 180,
+                        expenses: 0,
                         fob: 30,
                         parking: 10
                     },
-                    description: "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios.",
-                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento disponible']
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina']
+                },
+                '3': {
+                    name: "LAF 10C SIAN",
+                    reference: "LAF 10C 1/1",
+                    building: "La Fontaine",
+                    address: "1238 Drexel Ave, Miami Beach, FL 33139",
+                    description: "Moderno apartamento de 1 habitación y 1 baño en La Fontaine, con vistas espectaculares.",
+                    pricing: {
+                        nightly: 175,
+                        expenses: 0,
+                        fob: 30,
+                        parking: 10
+                    },
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio']
                 },
                 '4': {
-                    reference: "MAM",
-                    building: "Ocean Reserve Condo",
-                    address: "Avenida Collins 19370, Sunny Isles",
+                    name: "MAM",
+                    reference: "MAM 1/1",
+                    building: "Marbella",
+                    address: "Miami Beach, FL",
+                    description: "Confortable apartamento de 1 habitación y 1 baño en Marbella, ideal para parejas.",
                     pricing: {
                         nightly: 150,
-
+                        expenses: 0,
+                        fob: 30,
+                        parking: 10
                     },
-                    description: "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido.",
-                    amenities: ['Cocina completa', 'WiFi de alta velocidad', 'TV por cable', 'Aire acondicionado', 'Lavadora/Secadora', 'Estacionamiento incluido']
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina']
+                },
+                '5': {
+                    name: "LAF 9R Sian",
+                    reference: "LAF 9R 2/2",
+                    building: "La Fontaine",
+                    address: "1238 Drexel Ave, Miami Beach, FL 33139",
+                    description: "Espacioso apartamento de 2 habitaciones y 2 baños en La Fontaine, perfecto para familias.",
+                    pricing: {
+                        nightly: 200,
+                        expenses: 30,
+                        fob: 30,
+                        parking: 10
+                    },
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio', 'Balcón']
+                },
+                '6': {
+                    name: "LAF 4C Sian",
+                    reference: "LAF 4C 1/2",
+                    building: "La Fontaine",
+                    address: "1238 Drexel Ave, Miami Beach, FL 33139",
+                    description: "Elegante apartamento de 1 habitación y 2 baños en La Fontaine, con acabados modernos.",
+                    pricing: {
+                        nightly: 180,
+                        expenses: 0,
+                        fob: 30,
+                        parking: 10
+                    },
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio']
+                },
+                '7': {
+                    name: "LAF 9M Sian",
+                    reference: "LAF 9M 2/2",
+                    building: "La Fontaine",
+                    address: "1238 Drexel Ave, Miami Beach, FL 33139",
+                    description: "Lujoso apartamento de 2 habitaciones y 2 baños en La Fontaine, con vistas panorámicas.",
+                    pricing: {
+                        nightly: 200,
+                        expenses: 30,
+                        fob: 30,
+                        parking: 10
+                    },
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio', 'Balcón']
+                },
+                '8': {
+                    name: "MAM MARBELLA",
+                    reference: "MAM MARBELLA 2/2",
+                    building: "Marbella",
+                    address: "Miami Beach, FL",
+                    description: "Amplio apartamento de 2 habitaciones y 2 baños en Marbella, con servicio de limpieza incluido.",
+                    pricing: {
+                        nightly: 190,
+                        expenses: 200,
+                        fob: 0,
+                        parking: 0,
+                        cleaning: 200
+                    },
+                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Servicio de limpieza']
                 }
             };
 
@@ -216,13 +311,12 @@
                 const mainImage = document.getElementById('mainImage');
                 const thumbnailContainer = document.getElementById('thumbnailContainer');
 
+                // Establecer imagen principal
                 mainImage.src = `/assets/images/apartments/apt${aptId}/1.jpeg`;
                 mainImage.alt = `Vista principal del departamento ${aptId}`;
-                mainImage.className = 'w-full h-64 sm:h-96 object-cover rounded-lg cursor-pointer';
 
+                // Limpiar y cargar miniaturas
                 thumbnailContainer.innerHTML = '';
-
-                // Cargar hasta 12 miniaturas
                 for (let i = 1; i <= 12; i++) {
                     const imgPath = `/assets/images/apartments/apt${aptId}/${i}.jpeg`;
                     const thumbnail = document.createElement('div');
@@ -233,11 +327,9 @@
                     img.alt = `Vista ${i} del departamento ${aptId}`;
                     img.className = 'w-full h-16 object-cover rounded-lg hover:opacity-75 transition';
 
-                    img.onerror = function () {
-                        thumbnail.remove();
-                    };
+                    img.onerror = () => thumbnail.remove();
 
-                    thumbnail.onclick = function () {
+                    thumbnail.onclick = () => {
                         mainImage.src = imgPath;
                         mainImage.alt = `Vista ${i} del departamento ${aptId}`;
                     };
@@ -249,14 +341,14 @@
 
             function updateDetails() {
                 const aptData = apartments[aptId];
+                if (!aptData) return;
 
-                // Mostrar referencia y edificio
-                const title = document.querySelector('h1');
-                title.innerHTML = `<span class="text-lg text-blue-900">Ref: ${aptData.reference}</span><br>${aptData.building}`;
-
-                // Mostrar dirección y descripción
+                // Actualizar título y descripción
+                document.querySelector('h1').innerHTML = `
+                    <span class="text-lg text-blue-900">Ref: ${aptData.reference}</span><br>
+                    ${aptData.building}
+                `;
                 document.getElementById('addressText').textContent = aptData.address;
-
 
                 // Actualizar precios
                 const pricingList = document.getElementById('pricingList');
@@ -277,6 +369,68 @@
                             pricingList.appendChild(li);
                         }
                     });
+                    function setupBookingButton() {
+                        const aptData = apartments[aptId];
+                        const childrenCount = document.getElementById('childrenCount');
+                        const childrenAges = document.getElementById('childrenAges');
+
+                        // Manejar cambios en el número de menores
+                        childrenCount.addEventListener('change', function () {
+                            const count = parseInt(this.value);
+                            childrenAges.innerHTML = '';
+
+                            for (let i = 0; i < count; i++) {
+                                const ageGroup = document.createElement('div');
+                                ageGroup.className = 'flex items-center gap-2 bg-white p-2 rounded';
+                                ageGroup.innerHTML = `
+                <label class="text-sm text-slate-600 flex-1">Edad del menor ${i + 1}:</label>
+                <select class="child-age p-2 border border-slate-300 rounded-md w-24">
+                    ${Array.from({ length: 18 }, (_, i) => `<option value="${i}">${i} años</option>`).join('')}
+                </select>
+            `;
+                                childrenAges.appendChild(ageGroup);
+                            }
+                        });
+
+                        // Configurar el botón de reserva
+                        document.getElementById('bookNowBtn').onclick = () => {
+                            const adultsCount = document.getElementById('adultsCount').value;
+                            const childrenAgesArray = Array.from(document.querySelectorAll('.child-age'))
+                                .map(select => select.value);
+
+                            const queryParams = new URLSearchParams({
+                                apt: aptId,
+                                ref: aptData.reference,
+                                name: aptData.name,
+                                building: aptData.building,
+                                address: aptData.address,
+                                price: aptData.pricing.nightly,
+                                expenses: aptData.pricing.expenses || 0,
+                                fob: aptData.pricing.fob || 0,
+                                parking: aptData.pricing.parking || 0,
+                                cleaning: aptData.pricing.cleaning || 0,
+                                adults: adultsCount,
+                                children: childrenCount.value,
+                                childrenAges: childrenAgesArray.join(',')
+                            });
+
+                            // Activar el enlace de planificación y establecer la URL
+                            const planningLink = document.getElementById('planningLink');
+                            planningLink.href = `/pages/planning.html?${queryParams.toString()}`;
+                            planningLink.classList.remove('pointer-events-none', 'opacity-50');
+
+                            // Mostrar resumen de la reserva
+                            const resumenReserva = `
+            Resumen de la reserva:
+            - ${adultsCount} adulto(s)
+            - ${childrenCount.value} menor(es)
+            ${childrenAgesArray.length > 0 ? '- Edades de menores: ' + childrenAgesArray.join(', ') + ' años' : ''}
+        `;
+
+                            // Mostrar mensaje de éxito con el resumen
+                            alert(resumenReserva + '\n\n¡Reserva iniciada! Ahora puedes acceder a la planificación.');
+                        };
+                    }
                 }
 
                 // Actualizar amenities
@@ -285,26 +439,22 @@
 
                 const amenityIcons = {
                     'Cocina completa': 'fa-utensils',
-                    'WiFi de alta velocidad': 'fa-wifi',
-                    'TV por cable': 'fa-tv',
+                    'WiFi': 'fa-wifi',
+                    'TV': 'fa-tv',
                     'Aire acondicionado': 'fa-snowflake',
                     'Lavadora/Secadora': 'fa-washer',
-                    'Estacionamiento incluido': 'fa-parking',
-                    'Estacionamiento disponible': 'fa-parking'
+                    'Piscina': 'fa-swimming-pool',
+                    'Gimnasio': 'fa-dumbbell',
+                    'Estacionamiento': 'fa-parking'
                 };
 
                 aptData.amenities.forEach(amenity => {
                     const div = document.createElement('div');
                     div.className = 'flex items-center gap-3 p-4 bg-slate-50 rounded-lg';
-
-                    const icon = document.createElement('i');
-                    icon.className = `fas ${amenityIcons[amenity] || 'fa-check'} text-blue-900`;
-
-                    const span = document.createElement('span');
-                    span.textContent = amenity;
-
-                    div.appendChild(icon);
-                    div.appendChild(span);
+                    div.innerHTML = `
+                        <i class="fas ${amenityIcons[amenity] || 'fa-check'} text-blue-900"></i>
+                        <span>${amenity}</span>
+                    `;
                     amenitiesContainer.appendChild(div);
                 });
             }
@@ -313,98 +463,44 @@
                 const modal = document.getElementById('apartmentModal');
                 const closeModal = document.querySelector('.close-modal');
                 const mainImage = document.getElementById('mainImage');
-                const modalGallery = document.getElementById('modalGallery');
                 const aptData = apartments[aptId];
 
-                mainImage.onclick = function () {
+                mainImage.onclick = () => {
                     modal.style.display = 'flex';
-                    document.getElementById('modalTitle').textContent = aptData.building;
+                    document.getElementById('modalTitle').textContent = aptData.name || aptData.building;
                     document.getElementById('modalDescription').textContent = aptData.description;
-
-                    modalGallery.innerHTML = '';
-                    for (let i = 1; i <= 12; i++) {
-                        const imgPath = `/assets/images/apartments/apt${aptId}/${i}.jpeg`;
-                        const img = document.createElement('img');
-                        img.src = imgPath;
-                        img.alt = `Vista ${i} del departamento ${aptId}`;
-                        img.className = 'w-full rounded-lg cursor-pointer';
-
-                        img.onerror = function () {
-                            img.remove();
-                        };
-
-                        modalGallery.appendChild(img);
-                    }
                 };
 
-                closeModal.onclick = function () {
-                    modal.style.display = 'none';
-                };
-
-                window.onclick = function (event) {
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                    }
+                closeModal.onclick = () => modal.style.display = 'none';
+                window.onclick = event => {
+                    if (event.target === modal) modal.style.display = 'none';
                 };
             }
 
-            function handleBooking() {
-        const aptData = apartments[aptId];
-        if (!aptData) {
-            alert('Error: No se encontró la información del departamento');
-            return;
-        }
+            function setupBookingButton() {
+                const aptData = apartments[aptId];
+                document.getElementById('bookNowBtn').onclick = () => {
+                    const queryParams = new URLSearchParams({
+                        apt: aptId,
+                        ref: aptData.reference,
+                        building: aptData.building,
+                        address: aptData.address,
+                        price: aptData.pricing.nightly,
+                        expenses: aptData.pricing.expenses || 0,
+                        fob: aptData.pricing.fob || 0,
+                        parking: aptData.pricing.parking || 0
+                    });
 
-        try {
-            // Asegurarse de que todos los valores estén definidos antes de la conversión
-            const pricing = aptData.pricing || {};
-            const queryParams = new URLSearchParams({
-                apt: aptId,
-                ref: aptData.reference || '',
-                building: aptData.building || '',
-                address: aptData.address || '',
-                image: `/assets/images/apartments/apt${aptId}/1.jpeg`,
-                type: 'apartment',
-                price: (pricing.nightly || '').toString(),
-                expenses: (pricing.expenses || '').toString(),
-                fob: (pricing.fob || '').toString(),
-                parking: (pricing.parking || '').toString()
-            });
-
-            // Asegurarse de que los arrays y objetos se serialicen correctamente
-            if (aptData.amenities && Array.isArray(aptData.amenities)) {
-                queryParams.append('amenities', JSON.stringify(aptData.amenities));
+                    window.location.href = `/pages/planning.html?${queryParams.toString()}`;
+                };
             }
 
-            if (aptData.description) {
-                queryParams.append('description', aptData.description);
-            }
-
-            const planningUrl = `/pages/planning.html?${queryParams.toString()}`;
-            console.log('Datos enviados:', Object.fromEntries(queryParams.entries())); // Debug
-            window.location.href = planningUrl;
-        } catch (error) {
-            console.error('Error al procesar la redirección:', error);
-            alert('Hubo un error al procesar la reserva. Por favor, inténtelo de nuevo.');
-        }
-    }
-
-    // Inicializar la página si el apartamento existe
-    if (apartments[aptId]) {
-        loadImages();
-        updateDetails();
-        setupModal();
-        
-        // Configurar el botón de reserva
-        const bookNowBtn = document.getElementById('bookNowBtn');
-        if (bookNowBtn) {
-            bookNowBtn.onclick = handleBooking;
-        }
-    } else {
-        console.error('Apartamento no encontrado:', aptId);
-        window.location.href = '/pages/apartments.html';
-    }
-});
+            // Inicializar la página
+            loadImages();
+            updateDetails();
+            setupModal();
+            setupBookingButton();
+        });
     </script>
 </body>
 

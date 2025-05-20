@@ -385,24 +385,55 @@
                     return;
                 }
 
-                // Validar formato de email
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    alert('Por favor, ingrese un correo electrónico válido');
-                    return;
-                }
+                // Obtener el resumen de costos
+                const resumenCostos = document.querySelector('#resumenCostos');
+                const costoTotal = resumenCostos ?
+                    resumenCostos.querySelector('.font-semibold span:last-child').textContent :
+                    'No calculado';
 
-                // Validar formato de teléfono
-                const phoneRegex = /^\+?[\d\s-]{8,}$/;
-                if (!phoneRegex.test(phone)) {
-                    alert('Por favor, ingrese un número de teléfono válido');
-                    return;
-                }
+                // Obtener detalles adicionales según el tipo de reserva
+                const tipoReserva = aptId ? 'Apartamento' : 'Vehículo';
+                const detallesReserva = aptId ? {
+                    edificio: urlParams.get('building') || 'No especificado',
+                    direccion: urlParams.get('address') || 'No especificado',
+                    referencia: urlParams.get('ref') || 'No especificado'
+                } : {
+                    modelo: urlParams.get('title') || 'No especificado',
+                    caracteristicas: urlParams.get('features') || 'No especificado'
+                };
 
-                // Aquí se podría agregar la lógica para enviar los datos a un servidor
-                alert('Reserva confirmada. Nos pondremos en contacto contigo pronto.');
+                // Crear el cuerpo del correo
+                const mailBody = `
+        Nueva Reserva:
+        
+        Datos del Cliente:
+        - Nombre: ${firstName} ${lastName}
+        - Email: ${email}
+        - Teléfono: ${phone}
+        - Fechas: ${dateRange}
+        
+        Detalles de la Reserva:
+        - Tipo: ${tipoReserva}
+        ${aptId ?
+                        `- Edificio: ${detallesReserva.edificio}
+            - Dirección: ${detallesReserva.direccion}
+            - Referencia: ${detallesReserva.referencia}` :
+                        `- Modelo: ${detallesReserva.modelo}
+            - Características: ${detallesReserva.caracteristicas}`
+                    }
+        
+        Costo Total: ${costoTotal}
+    `;
+
+                // Enviar el correo usando mailto
+                const mailtoLink = `mailto:ciwl14corp@gmail.com?subject=Nueva Reserva - L14 Corp&body=${encodeURIComponent(mailBody)}`;
+                window.location.href = mailtoLink;
+
+                // Mostrar mensaje de confirmación
+                alert('¡Gracias por su reserva! Se abrirá su cliente de correo para enviar los detalles.');
             });
         });
+
     </script>
 </body>
 

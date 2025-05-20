@@ -2,71 +2,92 @@
   "apartments": [
     {
       "id": 1,
-      "name": "Sian Oceanfront Condos",
-      "description": "Vista exterior y sala del Departamento 1 ubicado en Miami, completamente equipado",
+      "name": "LAF 7EN SIAN",
+      "type": "1/1",
       "price": 175,
-      "priceUnit": "por noche",
+      "location": "Miami",
       "image": "/assets/images/apartments/apt1/2.jpeg",
-      "location": "4001 S Ocean Dr, Hollywood, FL 33019",
-      "amenities": [
-        "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
-        "Aire acondicionado",
-        "Lavadora/Secadora",
-        "Estacionamiento disponible"
-      ]
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
     },
     {
       "id": 2,
-      "name": "Ocean Reserve Condo",
-      "description": "Vista exterior y sala del Departamento 2 ubicado en Miami, completamente equipado",
+      "name": "MAM OR",
+      "type": "1/1",
       "price": 150,
-      "priceUnit": "por noche",
+      "location": "Miami",
       "image": "/assets/images/apartments/apt2/3.jpeg",
-      "location": "Avenida Collins 19370",
-      "amenities": [
-        "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
-        "Aire acondicionado",
-        "Lavadora/Secadora",
-        "Estacionamiento incluido"
-      ]
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
     },
     {
       "id": 3,
-      "name": "Ocean Reserve Condo",
-      "description": "Vista exterior y sala del Departamento 3 ubicado en Miami, completamente equipado",
-      "price": 150,
-      "priceUnit": "por noche",
+      "name": "LAF 10C SIAN",
+      "type": "1/1",
+      "price": 175,
+      "location": "Miami",
       "image": "/assets/images/apartments/apt3/5.jpeg",
-      "location": "Avenida Collins 19370",
-      "amenities": [
-        "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
-        "Aire acondicionado",
-        "Lavadora/Secadora",
-        "Estacionamiento incluido"
-      ]
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
     },
     {
       "id": 4,
-      "name": "Sian Oceanfront Condos",
-      "description": "Vista exterior y sala del Departamento 4 ubicado en Miami, completamente equipado",
-      "price": 175,
-      "priceUnit": "por noche",
+      "name": "MAM",
+      "type": "1/1",
+      "price": 150,
+      "location": "Miami",
       "image": "/assets/images/apartments/apt4/4.jpeg",
-      "location": "4001 S Ocean Dr, Hollywood, FL 33019",
-      "amenities": [
-        "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
-        "Aire acondicionado",
-        "Lavadora/Secadora",
-        "Estacionamiento disponible"
-      ]
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 5,
+      "name": "LAF 9R Sian",
+      "type": "2/2",
+      "price": 200,
+      "location": "Miami",
+      "image": "/assets/images/apartments/apt5/1.jpeg",
+      "expenses": 30,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 6,
+      "name": "LAF 4C Sian",
+      "type": "1/2",
+      "price": 180,
+      "location": "Miami",
+      "image": "/assets/images/apartments/apt6/2.jpeg",
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 7,
+      "name": "LAF 9M Sian",
+      "type": "2/2",
+      "price": 200,
+      "location": "Miami",
+      "image": "/assets/images/apartments/apt7/1.jpeg",
+      "expenses": 30,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 8,
+      "name": "MAM MARBELLA",
+      "type": "2/2",
+      "price": 190,
+      "location": "Miami",
+      "image": "/assets/images/apartments/apt8/1.jpeg",
+      "expenses": 200,
+      "fob": 0,
+      "parking": 0,
+      "cleaning": 200
     }
   ]
 }

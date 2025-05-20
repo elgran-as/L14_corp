@@ -1,100 +1,230 @@
 {
-  "apartmentDetails": [
+  "apartments": [
     {
       "id": 1,
-      "name": "Sian Oceanfront Condos",
-      "location": "Hollywood, FL",
-      "address": "4001 S Ocean Dr, Hollywood, FL 33019",
-      "pricing": {
-        "nightly": 175,
-        "expenses": 180,
-        "fob": 30,
-        "parking": 10
-      },
+      "name": "LAF 7EN SIAN",
+      "type": "1/1",
+      "price": 175,
+      "location": "Miami",
+      "building": "La Fontaine",
+      "address": "1238 Drexel Ave, Miami Beach, FL 33139",
+      "images": [
+        "/assets/images/apartments/apt1/1.jpeg",
+        "/assets/images/apartments/apt1/2.jpeg",
+        "/assets/images/apartments/apt1/3.jpeg",
+        "/assets/images/apartments/apt1/4.jpeg"
+      ],
       "amenities": [
         "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
         "Aire acondicionado",
+        "WiFi",
+        "TV",
         "Lavadora/Secadora",
-        "Estacionamiento disponible"
+        "Piscina",
+        "Gimnasio"
       ],
-      "description": "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios."
+      "description": "Hermoso apartamento de 1 habitación y 1 baño en La Fontaine, Miami Beach. Totalmente amueblado y equipado.",
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
     },
     {
       "id": 2,
-      "name": "Ocean Reserve Condo",
-      "location": "Sunny Isles",
-      "address": "Avenida Collins 19370",
-      "area": 100,
-      "areaUnit": "metros cuadrados",
-      "bedrooms": 1,
-      "beds": {
-        "queen": 2,
-        "sofaBed": 1
-      },
+      "name": "MAM OR",
+      "type": "1/1",
+      "price": 150,
+      "location": "Miami",
+      "building": "Marbella",
+      "address": "Miami Beach, FL",
+      "images": [
+        "/assets/images/apartments/apt2/1.jpeg",
+        "/assets/images/apartments/apt2/2.jpeg",
+        "/assets/images/apartments/apt2/3.jpeg",
+        "/assets/images/apartments/apt2/4.jpeg"
+      ],
       "amenities": [
         "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
         "Aire acondicionado",
+        "WiFi",
+        "TV",
         "Lavadora/Secadora",
-        "Estacionamiento incluido",
-        "Piscina climatizada",
-        "Cancha de tenis",
-        "Mini market",
-        "Bar",
-        "Balcón"
+        "Piscina"
       ],
-      "description": "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido."
+      "description": "Acogedor apartamento de 1 habitación y 1 baño en Marbella, Miami Beach. Completamente amueblado.",
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
     },
     {
       "id": 3,
-      "name": "Ocean Reserve Condo",
-      "location": "Sunny Isles",
-      "address": "Avenida Collins 19370",
-      "area": 100,
-      "areaUnit": "metros cuadrados",
-      "bedrooms": 1,
-      "beds": {
-        "queen": 2,
-        "sofaBed": 1
-      },
+      "name": "LAF 10C SIAN",
+      "type": "1/1",
+      "price": 175,
+      "location": "Miami",
+      "building": "La Fontaine",
+      "address": "1238 Drexel Ave, Miami Beach, FL 33139",
+      "images": [
+        "/assets/images/apartments/apt3/1.jpeg",
+        "/assets/images/apartments/apt3/2.jpeg",
+        "/assets/images/apartments/apt3/3.jpeg",
+        "/assets/images/apartments/apt3/4.jpeg",
+        "/assets/images/apartments/apt3/5.jpeg"
+      ],
       "amenities": [
         "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
         "Aire acondicionado",
+        "WiFi",
+        "TV",
         "Lavadora/Secadora",
-        "Estacionamiento incluido",
-        "Piscina climatizada",
-        "Cancha de tenis",
-        "Mini market",
-        "Bar",
-        "Balcón"
+        "Piscina",
+        "Gimnasio"
       ],
-      "description": "Sunny Isles, 100 metros cuadrados de apartamento. 1 dormitorio con 2 camas queen y en el living sofá cama queen. Totalmente equipado. Balcón. Piscina climatizada, cancha de tenis. Mini market y bar. Parking incluido."
+      "description": "Moderno apartamento de 1 habitación y 1 baño en La Fontaine, con vistas espectaculares.",
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
     },
     {
       "id": 4,
-      "name": "Sian Oceanfront Condos",
-      "location": "Hollywood, FL",
-      "address": "4001 S Ocean Dr, Hollywood, FL 33019",
-      "pricing": {
-        "nightly": 175,
-        "expenses": 180,
-        "fob": 30,
-        "parking": 10
-      },
+      "name": "MAM",
+      "type": "1/1",
+      "price": 150,
+      "location": "Miami",
+      "building": "Marbella",
+      "address": "Miami Beach, FL",
+      "images": [
+        "/assets/images/apartments/apt4/1.jpeg",
+        "/assets/images/apartments/apt4/2.jpeg",
+        "/assets/images/apartments/apt4/3.jpeg",
+        "/assets/images/apartments/apt4/4.jpeg"
+      ],
       "amenities": [
         "Cocina completa",
-        "WiFi de alta velocidad",
-        "TV por cable",
         "Aire acondicionado",
+        "WiFi",
+        "TV",
         "Lavadora/Secadora",
-        "Estacionamiento disponible"
+        "Piscina"
       ],
-      "description": "Hollywood FL, 175 USD por noche, 180 USD de gastos, 30 USD de FOB por única vez. Estacionamiento disponible por 10 USD diarios."
+      "description": "Confortable apartamento de 1 habitación y 1 baño en Marbella, ideal para parejas.",
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 5,
+      "name": "LAF 9R Sian",
+      "type": "2/2",
+      "price": 200,
+      "location": "Miami",
+      "building": "La Fontaine",
+      "address": "1238 Drexel Ave, Miami Beach, FL 33139",
+      "images": [
+        "/assets/images/apartments/apt5/1.jpeg",
+        "/assets/images/apartments/apt5/2.jpeg",
+        "/assets/images/apartments/apt5/3.jpeg",
+        "/assets/images/apartments/apt5/4.jpeg"
+      ],
+      "amenities": [
+        "Cocina completa",
+        "Aire acondicionado",
+        "WiFi",
+        "TV",
+        "Lavadora/Secadora",
+        "Piscina",
+        "Gimnasio",
+        "Balcón"
+      ],
+      "description": "Espacioso apartamento de 2 habitaciones y 2 baños en La Fontaine, perfecto para familias.",
+      "expenses": 30,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 6,
+      "name": "LAF 4C Sian",
+      "type": "1/2",
+      "price": 180,
+      "location": "Miami",
+      "building": "La Fontaine",
+      "address": "1238 Drexel Ave, Miami Beach, FL 33139",
+      "images": [
+        "/assets/images/apartments/apt6/1.jpeg",
+        "/assets/images/apartments/apt6/2.jpeg",
+        "/assets/images/apartments/apt6/3.jpeg",
+        "/assets/images/apartments/apt6/4.jpeg"
+      ],
+      "amenities": [
+        "Cocina completa",
+        "Aire acondicionado",
+        "WiFi",
+        "TV",
+        "Lavadora/Secadora",
+        "Piscina",
+        "Gimnasio"
+      ],
+      "description": "Elegante apartamento de 1 habitación y 2 baños en La Fontaine, con acabados modernos.",
+      "expenses": 0,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 7,
+      "name": "LAF 9M Sian",
+      "type": "2/2",
+      "price": 200,
+      "location": "Miami",
+      "building": "La Fontaine",
+      "address": "1238 Drexel Ave, Miami Beach, FL 33139",
+      "images": [
+        "/assets/images/apartments/apt7/1.jpeg",
+        "/assets/images/apartments/apt7/2.jpeg",
+        "/assets/images/apartments/apt7/3.jpeg",
+        "/assets/images/apartments/apt7/4.jpeg"
+      ],
+      "amenities": [
+        "Cocina completa",
+        "Aire acondicionado",
+        "WiFi",
+        "TV",
+        "Lavadora/Secadora",
+        "Piscina",
+        "Gimnasio",
+        "Balcón"
+      ],
+      "description": "Lujoso apartamento de 2 habitaciones y 2 baños en La Fontaine, con vistas panorámicas.",
+      "expenses": 30,
+      "fob": 30,
+      "parking": 10
+    },
+    {
+      "id": 8,
+      "name": "MAM MARBELLA",
+      "type": "2/2",
+      "price": 190,
+      "location": "Miami",
+      "building": "Marbella",
+      "address": "Miami Beach, FL",
+      "images": [
+        "/assets/images/apartments/apt8/1.jpeg",
+        "/assets/images/apartments/apt8/2.jpeg",
+        "/assets/images/apartments/apt8/3.jpeg",
+        "/assets/images/apartments/apt8/4.jpeg"
+      ],
+      "amenities": [
+        "Cocina completa",
+        "Aire acondicionado",
+        "WiFi",
+        "TV",
+        "Lavadora/Secadora",
+        "Piscina",
+        "Servicio de limpieza"
+      ],
+      "description": "Amplio apartamento de 2 habitaciones y 2 baños en Marbella, con servicio de limpieza incluido.",
+      "expenses": 200,
+      "fob": 0,
+      "parking": 0,
+      "cleaning": 200
     }
   ]
 }
