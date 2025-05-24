@@ -58,7 +58,8 @@
         </div>
         <!-- Botón de reserva -->
         <div class="booking-section mt-12 text-center">
-            <button id="bookNowBtn" class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
+            <button id="bookNowBtn"
+                class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
                 Reservar ahora
             </button>
         </div>
@@ -105,7 +106,8 @@
                 </a>
             </li>
             <li class="flex-1">
-                <a href="#" id="planningLink" title="Planificación" class="pointer-events-none opacity-50 flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
+                <a href="#" id="planningLink" title="Planificación"
+                    class="pointer-events-none opacity-50 flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-calendar-alt text-lg"></i>
                 </a>
             </li>
@@ -127,224 +129,165 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const carId = urlParams.get('id');
-    
-    // Función para extraer el precio del texto de descripción
-    function extractPrice(description) {
-        const match = description.match(/\$(\d+)/);
-        return match ? match[1] : null;
-    }
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const carId = urlParams.get('id');
 
-    if (carId && titles[carId]) {
-        // Actualizar el título de la página y el encabezado
-        document.title = `${titles[carId]} - L14 Corp`;
-        const title = document.querySelector('h1');
-        title.textContent = titles[carId];
+            // Función para extraer el precio del texto de descripción
+            function extractPrice(description) {
+                const match = description.match(/\$(\d+)/);
+                return match ? match[1] : null;
+            }
 
-        // Actualizar la descripción
-        const description = document.querySelector('p.text-slate-600.text-center');
-        if (description) {
-            description.textContent = descriptions[carId];
-        }
+            if (carId && titles[carId]) {
+                // Actualizar el título de la página y el encabezado
+                document.title = `${titles[carId]} - L14 Corp`;
+                const title = document.querySelector('h1');
+                title.textContent = titles[carId];
 
-        // Configurar la galería de imágenes
-        const mainImage = document.getElementById('mainImage');
-        const thumbnailContainer = document.getElementById('thumbnailContainer');
-        
-        // Establecer la imagen principal
-        const mainImageUrl = `/assets/images/cars/car${carId}/1.jpeg`;
-        mainImage.src = mainImageUrl;
-        mainImage.alt = `${titles[carId]} - Vista principal`;
+                // Actualizar la descripción
+                const description = document.querySelector('p.text-slate-600.text-center');
+                if (description) {
+                    description.textContent = descriptions[carId];
+                }
 
-        // Limpiar y generar miniaturas
-        thumbnailContainer.innerHTML = '';
-        for (let i = 1; i <= 4; i++) {
-            const imgUrl = `/assets/images/cars/car${carId}/${i}.jpeg`;
-            const thumbnail = document.createElement('div');
-            thumbnail.className = 'cursor-pointer';
+                // Configurar la galería de imágenes
+                const mainImage = document.getElementById('mainImage');
+                const thumbnailContainer = document.getElementById('thumbnailContainer');
 
-            const img = document.createElement('img');
-            img.src = imgUrl;
-            img.alt = `${titles[carId]} - Vista ${i}`;
-            img.className = 'w-full h-16 object-cover rounded-lg hover:opacity-75 transition';
+                // Establecer la imagen principal
+                const mainImageUrl = `/assets/images/cars/car${carId}/1.jpeg`;
+                mainImage.src = mainImageUrl;
+                mainImage.alt = `${titles[carId]} - Vista principal`;
 
-            img.onerror = function() {
-                thumbnail.remove();
-            };
+                // Limpiar y generar miniaturas
+                thumbnailContainer.innerHTML = '';
+                for (let i = 1; i <= 8; i++) {
+                    const imgUrl = `/assets/images/cars/car${carId}/${i}.jpeg`;
+                    const thumbnail = document.createElement('div');
+                    thumbnail.className = 'cursor-pointer';
 
-            thumbnail.onclick = function() {
-                mainImage.src = imgUrl;
-                mainImage.alt = `${titles[carId]} - Vista ${i}`;
-            };
+                    const img = document.createElement('img');
+                    img.src = imgUrl;
+                    img.alt = `${titles[carId]} - Vista ${i}`;
+                    img.className = 'w-full h-16 object-cover rounded-lg hover:opacity-75 transition';
 
-            thumbnail.appendChild(img);
-            thumbnailContainer.appendChild(thumbnail);
-        }
+                    img.onerror = function () {
+                        thumbnail.remove();
+                    };
 
-        // Actualizar la lista de precios
-        const pricingList = document.getElementById('pricingList');
-        const price = extractPrice(descriptions[carId]);
-        if (price && pricingList) {
-            pricingList.innerHTML = `
+                    thumbnail.onclick = function () {
+                        mainImage.src = imgUrl;
+                        mainImage.alt = `${titles[carId]} - Vista ${i}`;
+                    };
+
+                    thumbnail.appendChild(img);
+                    thumbnailContainer.appendChild(thumbnail);
+                }
+
+                // Actualizar la lista de precios
+                const pricingList = document.getElementById('pricingList');
+                const price = extractPrice(descriptions[carId]);
+                if (price && pricingList) {
+                    pricingList.innerHTML = `
                 <li>Por día: $${price} USD</li>
                 <li>Por semana: $${price * 7} USD</li>
                 <li>Por mes: $${price * 30} USD</li>
             `;
-        }
+                }
 
-        // Configurar el botón de reserva
-        const bookNowBtn = document.getElementById('bookNowBtn');
-        if (bookNowBtn) {
-            bookNowBtn.addEventListener('click', function() {
-                // Extraer características del auto
-                const features = descriptions[carId]
-                    .split('.')
-                    .filter(feature => feature.trim())
-                    .map(feature => feature.trim())
-                    .join(',');
+                // Configurar el botón de reserva
+                const bookNowBtn = document.getElementById('bookNowBtn');
+                if (bookNowBtn) {
+                    bookNowBtn.addEventListener('click', function () {
+                        // Extraer características del auto
+                        const features = descriptions[carId]
+                            .split('.')
+                            .filter(feature => feature.trim())
+                            .map(feature => feature.trim())
+                            .join(',');
 
-                // Obtener la URL absoluta de la imagen actual
-                const currentImage = document.getElementById('mainImage');
-                const imageUrl = currentImage.src;
+                        // Obtener la URL absoluta de la imagen actual
+                        const currentImage = document.getElementById('mainImage');
+                        const imageUrl = currentImage.src;
 
-                // Construir la URL con los parámetros necesarios
-                const planningUrl = new URL('/pages/planning.html', window.location.origin);
-                planningUrl.searchParams.set('car', carId);
-                planningUrl.searchParams.set('title', titles[carId]);
-                planningUrl.searchParams.set('features', features);
-                planningUrl.searchParams.set('image', imageUrl);
-                planningUrl.searchParams.set('price', price);
+                        // Construir la URL con los parámetros necesarios
+                        const planningUrl = new URL('/pages/planning.html', window.location.origin);
+                        planningUrl.searchParams.set('car', carId);
+                        planningUrl.searchParams.set('title', titles[carId]);
+                        planningUrl.searchParams.set('features', features);
+                        planningUrl.searchParams.set('image', imageUrl);
+                        planningUrl.searchParams.set('price', price);
 
-                // Redirigir a la página de planificación
-                window.location.href = planningUrl.toString();
+                        // Redirigir a la página de planificación
+                        window.location.href = planningUrl.toString();
+                    });
+                }
+            } else {
+                // Redirigir a la página de autos si no se encuentra el ID
+                window.location.href = '/pages/cars.html';
+            }
+        });
+
+        // Definir títulos y descripciones de los autos
+        const titles = {
+            '1': 'Nissan Versa',
+            '2': 'Mercedes Benz E450',
+            '3': 'Hyundai Palisade',
+            '4': 'Hyundai Santa Fe',
+            '5': 'Hyundai Tucson',
+            '6': 'Mercedes Benz GLC 300',
+            '7': 'Cadillac Escalade',
+            '8': 'Minivan Chrysler Pacifica'
+
+        };
+
+        const descriptions = {
+            '1': 'Sedán compacto económico y eficiente. Ideal para la ciudad. Seguro y Sunpass incluidos. $60 por día.',
+            '2': 'Convertible de lujo con alto rendimiento y estilo único. Seguro y Sunpass incluidos. $150 por día.',
+            '3': 'SUV de lujo con tres filas de asientos, perfecta para familias grandes. Seguro y Sunpass incluidos. $100 por día.',
+            '4': 'SUV mediano con tecnología avanzada y gran confort. Seguro y Sunpass incluidos. $75 por día.',
+            '5': 'SUV compacto versátil y eficiente en combustible. Seguro y Sunpass incluidos. $70 por día.',
+            '6': 'SUV de lujo con diseño elegante y tecnología de punta. Seguro y Sunpass incluidos. $150 por día.',
+            '7': 'SUV de lujo premium con pantalla OLED de 38", sistema Super Cruise y sonido Bose. Asientos de cuero con calefacción. Seguro y Sunpass incluidos. $200 por día.'
+        };
+
+        const car = cars[carId];
+        if (car) {
+            document.title = `${car.name} - L14 Corp`;
+            document.querySelector('h1').textContent = car.name;
+            document.querySelector('h2').textContent = car.reference;
+            document.querySelector('p').textContent = car.description;
+            document.getElementById('addressText').textContent = car.address;
+
+            // Configurar imagen principal
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = car.images[0];
+            mainImage.alt = `${car.name} - Imagen principal`;
+
+            // Generar miniaturas
+            const thumbnailContainer = document.getElementById('thumbnailContainer');
+            car.images.forEach((image, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = image;
+                thumbnail.alt = `${car.name} - Imagen ${index + 1}`;
+                thumbnail.className = 'w-full h-20 object-cover rounded cursor-pointer hover:opacity-75 transition';
+                thumbnail.addEventListener('click', () => {
+                    mainImage.src = image;
+                    mainImage.alt = `${car.name} - Imagen ${index + 1}`;
+                });
+                thumbnailContainer.appendChild(thumbnail);
+            });
+
+            // Llenar lista de precios
+            const pricingList = document.getElementById('pricingList');
+            car.pricing.forEach(price => {
+                const li = document.createElement('li');
+                li.textContent = price;
+                pricingList.appendChild(li);
             });
         }
-    } else {
-        // Redirigir a la página de autos si no se encuentra el ID
-        window.location.href = '/pages/cars.html';
-    }
-});
-   
-            // Definir títulos y descripciones de los autos
-            const titles = {
-                '1': 'Ford Escape',
-                '2': 'Nissan Rogue',
-                '3': 'Dodge Grand Caravan',
-                '4': 'BMW X1',
-                '5': 'Nissan Murano',
-                '6': 'Range Rover Evoque',
-                '7': 'Audi SQ5',
-                '8': 'Volkswagen Tiguan',
-                '9': 'Chevrolet Equinox',
-                '10': 'Hyundai Elantra',
-                '11': 'Dodge Grand Caravan Premium',
-                '12': 'Hyundai Palisade',
-                '13': 'Audi A4',
-                '14': 'Acura MDX',
-                '15': 'Porsche Macan',
-                '16': 'Chevrolet Sonic',
-                '17': 'Mazda 3',
-                '18': 'Ford Mustang',
-                '19': 'Hyundai Accent',
-                '20': 'Mitsubishi Outlander',
-                '21': 'BMW X5',
-                '22': 'Nissan Sentra',
-                '23': 'Nissan Pathfinder',
-                '24': 'Honda Civic',
-                '25': 'Porsche 718 Boxster',
-                '26': 'Kia Sedona',
-                '27': 'Jeep Grand Cherokee',
-                '28': 'Jeep Cherokee',
-                '29': 'Cadillac Escalade XL',
-                '30': 'Toyota Corolla',
-                '31': 'Toyota Sienna',
-                '32': 'Chevrolet Camaro',
-                '33': 'Nissan Versa',
-                '34': 'Dodge Journey',
-                '35': 'Kia Forte',
-                '36': 'Hyundai Santa Fe',
-                '37': 'Nissan Kicks',
-                '38': 'Ferrari California Turbo'
-            };
 
-            const descriptions = {
-                '1': 'SUV compacta con excelente economía de combustible. Seguro y Sunpass incluidos. $75 por día.',
-                '2': 'SUV versátil y confortable. Seguro y Sunpass incluidos. $75 por día.',
-                '3': 'Minivan espaciosa ideal para familias. Seguro y Sunpass incluidos. $75 por día.',
-                '4': 'SUV de lujo con alto rendimiento. Seguro y Sunpass incluidos. $85 por día.',
-                '5': 'SUV crossover con diseño moderno. Seguro y Sunpass incluidos. $85 por día.',
-                '6': 'SUV de lujo con diseño distintivo. Seguro y Sunpass incluidos. $105 por día.',
-                '7': 'SUV deportivo de alto rendimiento. Seguro y Sunpass incluidos. $105 por día.',
-                '8': 'SUV alemán con tecnología avanzada. Seguro y Sunpass incluidos. $80 por día.',
-                '9': 'SUV familiar con buen espacio interior. Seguro y Sunpass incluidos. $80 por día.',
-                '10': 'Sedán compacto con excelente economía. Seguro y Sunpass incluidos. $75 por día.',
-                '11': 'Minivan premium con características adicionales. Seguro y Sunpass incluidos. $90 por día.',
-                '12': 'SUV de lujo con tres filas de asientos. Seguro y Sunpass incluidos. $120 por día.',
-                '13': 'Sedán de lujo con tecnología de punta. Seguro y Sunpass incluidos. $90 por día.',
-                '14': 'SUV de lujo con excelente manejo. Seguro y Sunpass incluidos. $100 por día.',
-                '15': 'SUV deportivo de alto rendimiento. Seguro y Sunpass incluidos. $150 por día.',
-                '16': 'Compacto económico y ágil. Seguro y Sunpass incluidos. $65 por día.',
-                '17': 'Sedán deportivo con diseño elegante. Seguro y Sunpass incluidos. $75 por día.',
-                '18': 'Muscle car icónico americano. Seguro y Sunpass incluidos. $120 por día.',
-                '19': 'Sedán compacto económico. Seguro y Sunpass incluidos. $65 por día.',
-                '20': 'SUV versátil con tres filas. Seguro y Sunpass incluidos. $85 por día.',
-                '21': 'SUV de lujo con alto rendimiento. Seguro y Sunpass incluidos. $100 por día.',
-                '22': 'Sedán compacto con buen rendimiento. Seguro y Sunpass incluidos. $70 por día.',
-                '23': 'SUV familiar espacioso. Seguro y Sunpass incluidos. $90 por día.',
-                '24': 'Sedán confiable y eficiente. Seguro y Sunpass incluidos. $75 por día.',
-                '25': 'Deportivo convertible de lujo. Seguro y Sunpass incluidos. $275 por día.',
-                '26': 'Minivan familiar con características premium. Seguro y Sunpass incluidos. $110 por día.',
-                '27': 'SUV robusto con capacidades off-road. Seguro y Sunpass incluidos. $130 por día.',
-                '28': 'SUV compacto con capacidad todoterreno. Seguro y Sunpass incluidos. $80 por día.',
-                '29': 'SUV de lujo de tamaño completo. Seguro y Sunpass incluidos. $200 por día.',
-                '30': 'Sedán confiable y económico. Seguro y Sunpass incluidos. $75 por día.',
-                '31': 'Minivan espaciosa y confortable. Seguro y Sunpass incluidos. $100 por día.',
-                '32': 'Muscle car deportivo americano. Seguro y Sunpass incluidos. $120 por día.',
-                '33': 'Sedán compacto económico. Seguro y Sunpass incluidos. $70 por día.',
-                '34': 'SUV crossover versátil. Seguro y Sunpass incluidos. $75 por día.',
-                '35': 'Sedán compacto con buen equipamiento. Seguro y Sunpass incluidos. $75 por día.',
-                '36': 'SUV mediano con tecnología avanzada. Seguro y Sunpass incluidos. $89 por día.',
-                '37': 'SUV compacto urbano. Seguro y Sunpass incluidos. $70 por día.',
-                '38': 'Superdeportivo convertible de lujo. Seguro y Sunpass incluidos. $1000 por día.'
-            };
-
-            const car = cars[carId];
-            if (car) {
-                document.title = `${car.name} - L14 Corp`;
-                document.querySelector('h1').textContent = car.name;
-                document.querySelector('p').textContent = car.description;
-                document.getElementById('addressText').textContent = car.address;
-                
-                // Configurar imagen principal
-                const mainImage = document.getElementById('mainImage');
-                mainImage.src = car.images[0];
-                mainImage.alt = `${car.name} - Imagen principal`;
-
-                // Generar miniaturas
-                const thumbnailContainer = document.getElementById('thumbnailContainer');
-                car.images.forEach((image, index) => {
-                    const thumbnail = document.createElement('img');
-                    thumbnail.src = image;
-                    thumbnail.alt = `${car.name} - Imagen ${index + 1}`;
-                    thumbnail.className = 'w-full h-20 object-cover rounded cursor-pointer hover:opacity-75 transition';
-                    thumbnail.addEventListener('click', () => {
-                        mainImage.src = image;
-                        mainImage.alt = `${car.name} - Imagen ${index + 1}`;
-                    });
-                    thumbnailContainer.appendChild(thumbnail);
-                });
-
-                // Llenar lista de precios
-                const pricingList = document.getElementById('pricingList');
-                car.pricing.forEach(price => {
-                    const li = document.createElement('li');
-                    li.textContent = price;
-                    pricingList.appendChild(li);
-                });
-            }
-        
     </script>
 </body>
 
