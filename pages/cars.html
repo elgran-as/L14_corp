@@ -29,171 +29,207 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 flex-grow">
-        <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 text-center px-2">
-            Autos en Alquiler
+        <!-- Título dinámico -->
+        <h1 id="rentalTitle" class="text-3xl sm:text-4xl font-extrabold mb-2 text-center px-2">
+            Rental Car
         </h1>
         <h3 class="text-1xl sm:text-3xl mb-4 text-center px-2">
-            Los precios varian segun fecha y duracion</h3>
-        <section aria-label="Autos en alquiler" class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            Los precios varían según fecha y duración
+        </h3>
 
-            <!-- Nissan Versa -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Nissan Versa" class="car-image w-full" height="300" loading="lazy"
-                    src="/assets/images/cars/car1/1.jpeg" width="400" />
-                <h3 class="font-semibold text-base mb-1">
-                    Nissan Versa
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $60
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=1"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
+        <!-- Botones de selección -->
+        <div class="flex justify-center gap-4 mb-6">
+            <button id="carsBtn"
+                class="bg-blue-900 text-white text-sm sm:text-base font-semibold px-4 py-2 rounded-md transition focus:outline-none">
+                Cars
+            </button>
+            <button id="busBtn"
+                class="bg-white border border-blue-900 text-blue-900 text-sm sm:text-base font-semibold px-4 py-2 rounded-md transition focus:outline-none">
+                Bus
+            </button>
+        </div>
 
-            <!-- Mercedes Benz  E450 -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Mercedes Benz E450" class="car-image w-full" height="300" loading="lazy"
-                    src="/assets/images/cars/car2/1.jpeg" width="400" />
-                <h3 class="font-semibold text-base mb-1">
-                    Mercedes Benz E450
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $150
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=2"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
+        <section aria-label="Vehículos en alquiler">
+            <!-- Lista de Autos -->
+            <div id="carsList" class="grid grid-cols-2 md:grid-cols-3 gap-6">
 
-            <!-- Hyundai Palisade -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Hyundai Palisade" class="car-image w-full" height="300" loading="lazy"
-                    src="/assets/images/cars/car3/1.jpeg" width="400" />
-                <h3 class="font-semibold text-base mb-1">
-                    Hyundai Palisade
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $100 
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=3"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
+                <!-- Nissan Versa -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Nissan Versa" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car1/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">Nissan Versa</h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">starting at $60</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=1"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
 
-            <!-- Hyundai Santa Fe -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Hyundai Santa Fe" class="car-image w-full" height="300" loading="lazy"
-        src="/assets/images/cars/car4/1.jpeg" width="400" />
-                <h3 class="font-semibold text-base mb-1">
-                    Hyundai Santa Fe
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $75
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=4"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
+                <!-- Mercedes Benz  E450 -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Mercedes Benz E450" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car2/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">
+                        Mercedes Benz E450
+                    </h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">
+                        starting at $150
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=2"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
 
-            <!-- Hyundai Tucson -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Hyundai Tucson" class="car-image w-full" height="300" loading="lazy"
-                src="/assets/images/cars/car5/1.jpeg" width="400" />
-                <h3 class="font-semibold text-base mb-1">
-                    Hyundai Tucson
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $70
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=5"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
+                <!-- Hyundai Palisade -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Hyundai Palisade" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car3/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">
+                        Hyundai Palisade
+                    </h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">
+                        starting at $100
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=3"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
 
-            <!-- Mercedes Benz GLC 300 -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Mercedes Benz GLC 300" class="car-image w-full" height="300" loading="lazy"
-        src="/assets/images/cars/car6/1.jpeg" width="400" />
-               <h3 class="font-semibold text-base mb-1">
-                    Mercedes Benz GLC 300
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $150
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=6"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
-            <!-- Cadillac Escalade -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Cadillac Escalade" class="car-image w-full" height="300" loading="lazy"
-        src="/assets/images/cars/car7/1.jpeg" width="400" />
-               <h3 class="font-semibold text-base mb-1">
-                    Cadillac Escalade
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $ 200
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=7"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
-            <!-- Minivan Chrysler Pacifica -->
-            <article
-                class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
-                <img alt="Minivan Chrysler Pacifica" class="car-image w-full" height="300" loading="lazy"
-        src="/assets/images/cars/car8/1.jpeg" width="400" />
-               <h3 class="font-semibold text-base mb-1">
-                    Cadillac Escalade
-                </h3>
-                <h2>LYM</h2>
-                <p class="text-blue-900 font-bold text-sm mb-3">
-                    starting at $ 90
-                </p>
-                <div class="flex flex-col gap-2">
-                    <a href="/pages/car-detail.html?id=8"
-                        class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
-                        Ver detalles
-                    </a>
-                </div>
-            </article>
+                <!-- Hyundai Santa Fe -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Hyundai Santa Fe" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car4/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">
+                        Hyundai Santa Fe
+                    </h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">
+                        starting at $75
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=4"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
 
+                <!-- Hyundai Tucson -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Hyundai Tucson" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car5/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">
+                        Hyundai Tucson
+                    </h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">
+                        starting at $70
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=5"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Mercedes Benz GLC 300 -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Mercedes Benz GLC 300" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car6/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">
+                        Mercedes Benz GLC 300
+                    </h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">
+                        starting at $150
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=6"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
+                <!-- Cadillac Escalade -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Cadillac Escalade" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car7/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">
+                        Cadillac Escalade
+                    </h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">
+                        starting at $ 200
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=7"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
+                <!-- Minivan Chrysler Pacifica -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Minivan Chrysler Pacifica" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/cars/car8/1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">
+                        Minivan Chrysler Pacifica
+                    </h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">
+                        starting at $ 120
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/car-detail.html?id=8"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Lista de Buses -->
+
+            <div id="busList" class="grid grid-cols-2 md:grid-cols-3 gap-6 hidden">
+                <!-- Bus 1 -->
+                <article
+                    class="border border-transparent rounded-xl shadow-sm hover:shadow-md transition bg-white p-4 flex flex-col justify-between">
+                    <img alt="Mercedes Sprinter" class="car-image w-full" height="300" loading="lazy"
+                        src="/assets/images/buses/bus1.jpeg" width="400" />
+                    <h3 class="font-semibold text-base mb-1">Mercedes Sprinter</h3>
+                    <h2>LYM</h2>
+                    <p class="text-blue-900 font-bold text-sm mb-3">starting at $220</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pages/bus-detail.html?id=101"
+                            class="bg-blue-900 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition text-center">
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Puedes duplicar para más buses -->
+            </div>
         </section>
     </main>
 
@@ -250,6 +286,37 @@
             </li>
         </ul>
     </nav>
+
+    <script>
+        const carsBtn = document.getElementById('carsBtn');
+        const busBtn = document.getElementById('busBtn');
+        const carsList = document.getElementById('carsList');
+        const busList = document.getElementById('busList');
+        const rentalTitle = document.getElementById('rentalTitle');
+
+        function setActiveButton(activeBtn, inactiveBtn) {
+            activeBtn.classList.remove('bg-white', 'text-blue-900', 'border', 'border-blue-900');
+            activeBtn.classList.add('bg-blue-900', 'text-white');
+
+            inactiveBtn.classList.remove('bg-blue-900', 'text-white');
+            inactiveBtn.classList.add('bg-white', 'text-blue-900', 'border', 'border-blue-900');
+        }
+
+        carsBtn.addEventListener('click', () => {
+            carsList.classList.remove('hidden');
+            busList.classList.add('hidden');
+            rentalTitle.textContent = 'Rental Car'; // Cambia el título
+            setActiveButton(carsBtn, busBtn);
+        });
+
+        busBtn.addEventListener('click', () => {
+            carsList.classList.add('hidden');
+            busList.classList.remove('hidden');
+            rentalTitle.textContent = 'Rental Bus'; // Cambia el título
+            setActiveButton(busBtn, carsBtn);
+        });
+    </script>
+
     <script src="/js/main.js"></script>
 </body>
 
