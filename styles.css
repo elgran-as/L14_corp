@@ -1,8 +1,122 @@
 /* Estilos base */
+:root {
+    --velez-blue: #002f87;
+    --velez-blue-bright: #0055b8;
+}
+
 body {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+}
+
+.bg-blue-900 {
+    background-color: var(--velez-blue) !important;
+}
+
+.text-blue-900 {
+    color: var(--velez-blue) !important;
+}
+
+.border-blue-900,
+.hover\:border-blue-900:hover {
+    border-color: var(--velez-blue) !important;
+}
+
+.hover\:bg-blue-800:hover {
+    background-color: var(--velez-blue-bright) !important;
+}
+
+.logo-shine {
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+}
+
+.logo-shine::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    bottom: -30%;
+    left: -45%;
+    width: 34%;
+    transform: rotate(18deg);
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.15),
+        transparent);
+    animation: logo-shine 4.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes logo-shine {
+    0%, 62% { left: -45%; }
+    82%, 100% { left: 115%; }
+}
+
+nav[aria-label="Bottom navigation"] a,
+nav[aria-label="Navegación inferior"] a {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+nav[aria-label="Bottom navigation"] a::after,
+nav[aria-label="Navegación inferior"] a::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    left: -60%;
+    width: 38%;
+    transform: skewX(-20deg);
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.85),
+        rgba(255, 255, 255, 0.18),
+        transparent);
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav[aria-label="Bottom navigation"] a:active::after,
+nav[aria-label="Bottom navigation"] a:focus-visible::after,
+nav[aria-label="Bottom navigation"] a[aria-current="page"]::after,
+nav[aria-label="Bottom navigation"] a.bg-blue-900::after,
+nav[aria-label="Navegación inferior"] a:active::after,
+nav[aria-label="Navegación inferior"] a:focus-visible::after,
+nav[aria-label="Navegación inferior"] a[aria-current="page"]::after,
+nav[aria-label="Navegación inferior"] a.bg-blue-900::after {
+    animation: bottom-nav-shine 1.1s ease-out;
+}
+
+@keyframes bottom-nav-shine {
+    0% {
+        left: -60%;
+        opacity: 0;
+    }
+    15%, 70% {
+        opacity: 1;
+    }
+    100% {
+        left: 125%;
+        opacity: 0;
+    }
+}
+
+.local-clock {
+    min-width: 6.25rem;
+    color: var(--velez-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
 /* Estilos del carrusel */
@@ -228,5 +342,85 @@ footer {
     .caption-content {
         align-items: center;
         text-align: center;
+    }
+}
+
+.reservation-feedback[hidden],
+#reservationLoader[hidden],
+#reservationResult[hidden] {
+    display: none;
+}
+
+.reservation-feedback {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: rgb(15 23 42 / 0.55);
+}
+
+.reservation-feedback-card {
+    width: min(100%, 24rem);
+    padding: 2rem;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 20px 50px rgb(15 23 42 / 0.25);
+    text-align: center;
+}
+
+.reservation-logo-loader {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    margin: 0 auto;
+}
+
+.reservation-logo-loader img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.reservation-logo-base {
+    opacity: 0.2;
+    filter: grayscale(1);
+}
+
+.reservation-logo-fill {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    clip-path: inset(100% 0 0);
+}
+
+.reservation-logo-fill.is-filling {
+    animation: reservation-logo-fill 1.8s ease-out forwards;
+}
+
+@keyframes reservation-logo-fill {
+    to {
+        clip-path: inset(0 0 0);
+    }
+}
+
+.reservation-success-icon {
+    display: grid;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1rem;
+    place-items: center;
+    border-radius: 9999px;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reservation-logo-fill.is-filling {
+        animation-duration: 0.1s;
     }
 }

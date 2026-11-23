@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Detalle Departamento - L14 Corp</title>
+    <title>Apartment Detail - L14 Corp</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
 </head>
 
 <body class="bg-white text-slate-900 min-h-screen flex flex-col">
     <header class="fixed top-0 left-0 w-full bg-white border-b border-slate-200 shadow z-30">
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap sm:flex-nowrap gap-3">
-            <img alt="Logo L14 Corp, estilizado con letras L14 en azul oscuro" class="h-10 w-auto" height="40"
-                src="/assets/images/L14_corp.png" width="80" />
+            <img alt="Logo L14 Corp, stylized with L14 letters in dark blue" class="h-10 w-auto" height="40"
+                src="../assets/images/l14_corp.svg" width="80" />
             <div class="flex items-center gap-4">
-                <select aria-label="Cambiar idioma"
+                <select aria-label="Change language"
                     class="border border-slate-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    <option selected value="es">Español</option>
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
+                    <option value="es">English</option>
+                    <option selected value="en">Español</option>
                 </select>
                 <a href="apartments.html" class="text-blue-900 font-semibold hover:underline text-sm sm:text-base">
-                    ← Volver a Departamentos
+                    ← Back to Apartments
                 </a>
             </div>
         </div>
@@ -34,7 +32,7 @@
         <!-- Galería de imágenes -->
         <div class="image-gallery mb-8">
             <div class="main-image-container mb-4">
-                <img id="mainImage" src="" alt="Imagen principal del departamento"
+                <img id="mainImage" src="" alt="Main image of the apartment"
                     class="w-full h-64 sm:h-96 object-cover rounded-lg cursor-pointer">
             </div>
             <div id="thumbnailContainer" class="grid grid-cols-4 sm:grid-cols-6 gap-2">
@@ -49,11 +47,11 @@
         <div class="details-section mt-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="bg-slate-50 p-6 rounded-lg">
-                    <h3 class="font-semibold mb-4">Ubicación</h3>
+                    <h3 class="font-semibold mb-4">Location</h3>
                     <p id="addressText" class="text-slate-600"></p>
                 </div>
                 <div class="bg-slate-50 p-6 rounded-lg">
-                    <h3 class="font-semibold mb-4">Precios</h3>
+                    <h3 class="font-semibold mb-4">Pricing</h3>
                     <ul id="pricingList" class="text-slate-600 space-y-2">
                         <!-- Los precios se cargarán dinámicamente aquí -->
                     </ul>
@@ -66,19 +64,19 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
                     <i class="fas fa-wifi text-blue-900"></i>
-                    <span>WiFi gratuito</span>
+                    <span>Free WiFi</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
                     <i class="fas fa-swimming-pool text-blue-900"></i>
-                    <span>Piscina</span>
+                    <span>Pool</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
                     <i class="fas fa-dumbbell text-blue-900"></i>
-                    <span>Gimnasio</span>
+                    <span>Gym</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg">
                     <i class="fas fa-parking text-blue-900"></i>
-                    <span>Estacionamiento incluido</span>
+                    <span>Parking included</span>
                 </div>
             </div>
         </div>
@@ -88,28 +86,31 @@
         <!-- Botón de reserva -->
         <div class="booking-section mt-12">
             <div class="max-w-md mx-auto bg-slate-50 p-6 rounded-lg mb-6">
-                <h3 class="font-semibold mb-4 text-center">Detalles de la Reserva</h3>
+                <h3 class="font-semibold mb-4 text-center">Booking Details</h3>
+                <p id="occupancyInfo" class="text-sm text-blue-900 mb-4 text-center"></p>
 
                 <!-- Selector de Adultos -->
                 <div class="mb-4">
-                    <label class="block text-slate-700 mb-2">Adultos</label>
+                    <label class="block text-slate-700 mb-2">Adults</label>
                     <select id="adultsCount" class="w-full p-2 border border-slate-300 rounded-md">
-                        <option value="1">1 Adulto</option>
-                        <option value="2">2 Adultos</option>
-                        <option value="3">3 Adultos</option>
-                        <option value="4">4 Adultos</option>
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
                     </select>
+                    <p id="adultsError" class="text-red-500 text-sm mt-1 hidden">Maximum adults exceeded for this apartment type</p>
                 </div>
 
                 <!-- Selector de Menores -->
                 <div class="mb-4">
-                    <label class="block text-slate-700 mb-2">Menores</label>
+                    <label class="block text-slate-700 mb-2">Children</label>
                     <select id="childrenCount" class="w-full p-2 border border-slate-300 rounded-md">
-                        <option value="0">Sin menores</option>
-                        <option value="1">1 Menor</option>
-                        <option value="2">2 Menores</option>
-                        <option value="3">3 Menores</option>
+                        <option value="0">No children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
                     </select>
+                    <p id="childrenError" class="text-red-500 text-sm mt-1 hidden">Maximum children exceeded for this apartment type</p>
                     <div id="childrenAges" class="mt-3 space-y-2">
                         <!-- Las edades se agregarán dinámicamente aquí -->
                     </div>
@@ -118,59 +119,59 @@
             <div class="text-center">
                 <button id="bookNowBtn"
                     class="bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
-                    Reservar ahora
+                    Book Now
                 </button>
             </div>
         </div>
     </main>
 
     <footer class="text-center text-slate-500 text-sm mb-20 px-2">
-        <p>© 2025 L14 Corp. Todos los derechos reservados.</p>
+        <p>© 2026 L14 Corp. All rights reserved.</p>
         <div class="flex justify-center gap-4 mt-3">
             <a href="https://x.com/L14Corp" target="_blank" rel="noopener noreferrer"
-                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en X (Twitter)">
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Follow us on X (Twitter)">
                 <i class="fab fa-twitter text-lg"></i>
             </a>
             <a href="https://instagram.com/L14Corp" target="_blank" rel="noopener noreferrer"
-                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Instagram">
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Follow us on Instagram">
                 <i class="fab fa-instagram text-lg"></i>
             </a>
             <a href="https://facebook.com/L14Corp" target="_blank" rel="noopener noreferrer"
-                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en Facebook">
+                class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Follow us on Facebook">
                 <i class="fab fa-facebook text-lg"></i>
             </a>
         </div>
     </footer>
 
-    <nav aria-label="Navegación inferior"
+    <nav aria-label="Bottom navigation"
         class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-inner z-40">
         <ul class="flex justify-around max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 gap-3">
             <li class="flex-1">
-                <a href="/index.html" title="Inicio"
+                <a href="../index.html" title="Home"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-home text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/apartments.html" title="Departamentos"
+                <a href="apartments.html" title="Apartments"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-building text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/cars.html" title="Autos"
+                <a href="cars.html" title="Cars"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-car text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="#" id="planningLink" title="Planificación"
+                <a href="#" id="planningLink" title="Planning"
                     class="pointer-events-none opacity-50 flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-calendar-alt text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/about.html" title="Quienes Somos"
+                <a href="about.html" title="About Us"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-info-circle text-lg"></i>
                 </a>
@@ -197,114 +198,92 @@
                     reference: "LAF 7EN 1/1",
                     building: "La Fontaine",
                     address: "1238 Drexel Ave, Miami Beach, FL 33139",
-                    description: "Hermoso apartamento de 1 habitación y 1 baño en La Fontaine, Miami Beach. Totalmente amueblado y equipado.",
+                    description: "Beautiful 1 bedroom and 1 bathroom apartment in La Fontaine, Miami Beach. Fully furnished and equipped.",
                     pricing: {
                         nightly: 175,
                         expenses: 0,
                         fob: 30,
                         parking: 10
                     },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio']
+                    amenities: ['Full kitchen', 'Air conditioning', 'WiFi', 'TV', 'Washer/Dryer', 'Pool', 'Gym'],
+                    maxOccupancy: {
+                        adults: 2,
+                        children: 1
+                    }
                 },
                 '2': {
-                    name: "MAM OR",
-                    reference: "MAM OR 1/1",
-                    building: "Marbella",
-                    address: "Miami Beach, FL",
-                    description: "Acogedor apartamento de 1 habitación y 1 baño en Marbella, Miami Beach. Completamente amueblado.",
-                    pricing: {
-                        nightly: 150,
-                        expenses: 0,
-                        fob: 30,
-                        parking: 10
-                    },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina']
-                },
-                '3': {
                     name: "LAF 10C SIAN",
                     reference: "LAF 10C 1/1",
                     building: "La Fontaine",
                     address: "1238 Drexel Ave, Miami Beach, FL 33139",
-                    description: "Moderno apartamento de 1 habitación y 1 baño en La Fontaine, con vistas espectaculares.",
+                    description: "Modern 1 bedroom and 1 bathroom apartment in La Fontaine, with spectacular views.",
                     pricing: {
                         nightly: 175,
                         expenses: 0,
                         fob: 30,
                         parking: 10
                     },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio']
+                    amenities: ['Full kitchen', 'Air conditioning', 'WiFi', 'TV', 'Washer/Dryer', 'Pool', 'Gym'],
+                    maxOccupancy: {
+                        adults: 2,
+                        children: 1
+                    }
                 },
-                '4': {
-                    name: "MAM",
-                    reference: "MAM 1/1",
-                    building: "Marbella",
-                    address: "Miami Beach, FL",
-                    description: "Confortable apartamento de 1 habitación y 1 baño en Marbella, ideal para parejas.",
-                    pricing: {
-                        nightly: 150,
-                        expenses: 0,
-                        fob: 30,
-                        parking: 10
-                    },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina']
-                },
-                '5': {
+                '3': {
                     name: "LAF 9R Sian",
                     reference: "LAF 9R 2/2",
                     building: "La Fontaine",
                     address: "1238 Drexel Ave, Miami Beach, FL 33139",
-                    description: "Espacioso apartamento de 2 habitaciones y 2 baños en La Fontaine, perfecto para familias.",
+                    description: "Spacious 2 bedroom and 2 bathroom apartment in La Fontaine, perfect for families.",
                     pricing: {
                         nightly: 200,
                         expenses: 30,
                         fob: 30,
                         parking: 10
                     },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio', 'Balcón']
+                    amenities: ['Full kitchen', 'Air conditioning', 'WiFi', 'TV', 'Washer/Dryer', 'Pool', 'Gym', 'Balcony'],
+                    maxOccupancy: {
+                        adults: 4,
+                        children: 2
+                    }
                 },
-                '6': {
+                '4': {
                     name: "LAF 4C Sian",
                     reference: "LAF 4C 1/2",
                     building: "La Fontaine",
                     address: "1238 Drexel Ave, Miami Beach, FL 33139",
-                    description: "Elegante apartamento de 1 habitación y 2 baños en La Fontaine, con acabados modernos.",
+                    description: "Elegant 1 bedroom and 2 bathroom apartment in La Fontaine, with modern finishes.",
                     pricing: {
                         nightly: 180,
                         expenses: 0,
                         fob: 30,
                         parking: 10
                     },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio']
+                    amenities: ['Full kitchen', 'Air conditioning', 'WiFi', 'TV', 'Washer/Dryer', 'Pool', 'Gym'],
+                    maxOccupancy: {
+                        adults: 2,
+                        children: 1
+                    }
                 },
-                '7': {
+                '5': {
                     name: "LAF 9M Sian",
                     reference: "LAF 9M 2/2",
                     building: "La Fontaine",
                     address: "1238 Drexel Ave, Miami Beach, FL 33139",
-                    description: "Lujoso apartamento de 2 habitaciones y 2 baños en La Fontaine, con vistas panorámicas.",
+                    description: "Luxurious 2 bedroom and 2 bathroom apartment in La Fontaine, with panoramic views.",
                     pricing: {
                         nightly: 200,
                         expenses: 30,
                         fob: 30,
                         parking: 10
                     },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Gimnasio', 'Balcón']
-                },
-                '8': {
-                    name: "MAM MARBELLA",
-                    reference: "MAM MARBELLA 2/2",
-                    building: "Marbella",
-                    address: "Miami Beach, FL",
-                    description: "Amplio apartamento de 2 habitaciones y 2 baños en Marbella, con servicio de limpieza incluido.",
-                    pricing: {
-                        nightly: 190,
-                        expenses: 200,
-                        fob: 0,
-                        parking: 0,
-                        cleaning: 200
-                    },
-                    amenities: ['Cocina completa', 'Aire acondicionado', 'WiFi', 'TV', 'Lavadora/Secadora', 'Piscina', 'Servicio de limpieza']
+                    amenities: ['Full kitchen', 'Air conditioning', 'WiFi', 'TV', 'Washer/Dryer', 'Pool', 'Gym', 'Balcony'],
+                    maxOccupancy: {
+                        adults: 4,
+                        children: 2
+                    }
                 }
+
             };
 
             function loadImages() {
@@ -312,31 +291,36 @@
                 const thumbnailContainer = document.getElementById('thumbnailContainer');
 
                 // Establecer imagen principal
-                mainImage.src = `/assets/images/apartments/apt${aptId}/1.jpeg`;
-                mainImage.alt = `Vista principal del departamento ${aptId}`;
+                mainImage.src = `../assets/images/apartments/apt${aptId}/1.jpeg`;
+                mainImage.alt = `Main view of apartment ${aptId}`;
 
                 // Limpiar y cargar miniaturas
                 thumbnailContainer.innerHTML = '';
                 for (let i = 1; i <= 12; i++) {
-                    const imgPath = `/assets/images/apartments/apt${aptId}/${i}.jpeg`;
+                    const imgPath = `../assets/images/apartments/apt${aptId}/${i}.jpeg`;
                     const thumbnail = document.createElement('div');
                     thumbnail.className = 'cursor-pointer';
 
                     const img = document.createElement('img');
                     img.src = imgPath;
-                    img.alt = `Vista ${i} del departamento ${aptId}`;
+                    img.alt = `View ${i} of apartment ${aptId}`;
                     img.className = 'w-full h-16 object-cover rounded-lg hover:opacity-75 transition';
 
                     img.onerror = () => thumbnail.remove();
 
                     thumbnail.onclick = () => {
                         mainImage.src = imgPath;
-                        mainImage.alt = `Vista ${i} del departamento ${aptId}`;
+                        mainImage.alt = `View ${i} of apartment ${aptId}`;
                     };
 
                     thumbnail.appendChild(img);
                     thumbnailContainer.appendChild(thumbnail);
                 }
+            }
+
+            // Función global para determinar el tipo de apartamento
+            function getApartmentType(reference) {
+                return reference.includes('1/1') || reference.includes('1/2') ? '1bedroom' : '2bedroom';
             }
 
             function updateDetails() {
@@ -356,10 +340,10 @@
 
                 if (aptData.pricing) {
                     const prices = [
-                        { label: 'Por noche', value: aptData.pricing.nightly },
-                        { label: 'Gastos', value: aptData.pricing.expenses },
-                        { label: 'FOB (único pago)', value: aptData.pricing.fob },
-                        { label: 'Estacionamiento por día', value: aptData.pricing.parking }
+                        { label: 'Per night', value: aptData.pricing.nightly },
+                        { label: 'Expenses', value: aptData.pricing.expenses },
+                        { label: 'FOB (one-time payment)', value: aptData.pricing.fob },
+                        { label: 'Parking per day', value: aptData.pricing.parking }
                     ];
 
                     prices.forEach(price => {
@@ -369,68 +353,6 @@
                             pricingList.appendChild(li);
                         }
                     });
-                    function setupBookingButton() {
-                        const aptData = apartments[aptId];
-                        const childrenCount = document.getElementById('childrenCount');
-                        const childrenAges = document.getElementById('childrenAges');
-
-                        // Manejar cambios en el número de menores
-                        childrenCount.addEventListener('change', function () {
-                            const count = parseInt(this.value);
-                            childrenAges.innerHTML = '';
-
-                            for (let i = 0; i < count; i++) {
-                                const ageGroup = document.createElement('div');
-                                ageGroup.className = 'flex items-center gap-2 bg-white p-2 rounded';
-                                ageGroup.innerHTML = `
-                <label class="text-sm text-slate-600 flex-1">Edad del menor ${i + 1}:</label>
-                <select class="child-age p-2 border border-slate-300 rounded-md w-24">
-                    ${Array.from({ length: 18 }, (_, i) => `<option value="${i}">${i} años</option>`).join('')}
-                </select>
-            `;
-                                childrenAges.appendChild(ageGroup);
-                            }
-                        });
-
-                        // Configurar el botón de reserva
-                        document.getElementById('bookNowBtn').onclick = () => {
-                            const adultsCount = document.getElementById('adultsCount').value;
-                            const childrenAgesArray = Array.from(document.querySelectorAll('.child-age'))
-                                .map(select => select.value);
-
-                            const queryParams = new URLSearchParams({
-                                apt: aptId,
-                                ref: aptData.reference,
-                                name: aptData.name,
-                                building: aptData.building,
-                                address: aptData.address,
-                                price: aptData.pricing.nightly,
-                                expenses: aptData.pricing.expenses || 0,
-                                fob: aptData.pricing.fob || 0,
-                                parking: aptData.pricing.parking || 0,
-                                cleaning: aptData.pricing.cleaning || 0,
-                                adults: adultsCount,
-                                children: childrenCount.value,
-                                childrenAges: childrenAgesArray.join(',')
-                            });
-
-                            // Activar el enlace de planificación y establecer la URL
-                            const planningLink = document.getElementById('planningLink');
-                            planningLink.href = `/pages/planning.html?${queryParams.toString()}`;
-                            planningLink.classList.remove('pointer-events-none', 'opacity-50');
-
-                            // Mostrar resumen de la reserva
-                            const resumenReserva = `
-            Resumen de la reserva:
-            - ${adultsCount} adulto(s)
-            - ${childrenCount.value} menor(es)
-            ${childrenAgesArray.length > 0 ? '- Edades de menores: ' + childrenAgesArray.join(', ') + ' años' : ''}
-        `;
-
-                            // Mostrar mensaje de éxito con el resumen
-                            alert(resumenReserva + '\n\n¡Reserva iniciada! Ahora puedes acceder a la planificación.');
-                        };
-                    }
                 }
 
                 // Actualizar amenities
@@ -438,14 +360,14 @@
                 amenitiesContainer.innerHTML = '';
 
                 const amenityIcons = {
-                    'Cocina completa': 'fa-utensils',
+                    'Full kitchen': 'fa-utensils',
                     'WiFi': 'fa-wifi',
                     'TV': 'fa-tv',
-                    'Aire acondicionado': 'fa-snowflake',
-                    'Lavadora/Secadora': 'fa-washer',
-                    'Piscina': 'fa-swimming-pool',
-                    'Gimnasio': 'fa-dumbbell',
-                    'Estacionamiento': 'fa-parking'
+                    'Air conditioning': 'fa-snowflake',
+                    'Washer/Dryer': 'fa-washer',
+                    'Pool': 'fa-swimming-pool',
+                    'Gym': 'fa-dumbbell',
+                    'Parking': 'fa-parking'
                 };
 
                 aptData.amenities.forEach(amenity => {
@@ -457,6 +379,52 @@
                     `;
                     amenitiesContainer.appendChild(div);
                 });
+
+                // La información de ocupación máxima se actualiza en la función updateDetails
+
+                // Configurar opciones de adultos según el tipo de apartamento
+                const adultsSelect = document.getElementById('adultsCount');
+                adultsSelect.innerHTML = '';
+
+                // Determinar el tipo de apartamento y el máximo de adultos
+                const aptType = getApartmentType(aptData.reference);
+                const maxAdults = aptType === '1bedroom' ? 3 : 6;
+
+                for (let i = 1; i <= maxAdults; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = i === 1 ? '1 Adult' : `${i} Adults`;
+                    adultsSelect.appendChild(option);
+                }
+
+                // Configurar opciones de niños según el tipo de apartamento
+                const childrenSelect = document.getElementById('childrenCount');
+                childrenSelect.innerHTML = '';
+                const childrenOptions = [
+                    { value: 0, text: 'No children' },
+                    { value: 1, text: '1 Child' },
+                    { value: 2, text: '2 Children' },
+                    { value: 3, text: '3 Children' }
+                ];
+
+                // Determinar el máximo de niños según el tipo de apartamento
+                const maxChildren = aptType === '1bedroom' ? 1 : 2;
+
+                childrenOptions.forEach(option => {
+                    const optionEl = document.createElement('option');
+                    optionEl.value = option.value;
+                    optionEl.textContent = option.text;
+                    optionEl.disabled = option.value > maxChildren;
+                    childrenSelect.appendChild(optionEl);
+                });
+
+                // Actualizar la información de ocupación máxima
+                const occupancyInfo = document.getElementById('occupancyInfo');
+                if (aptType === '1bedroom') {
+                    occupancyInfo.textContent = 'Maximum occupancy: 3 adults or 2 adults and 1 child';
+                } else {
+                    occupancyInfo.textContent = 'Maximum occupancy: 6 adults or 5 adults and 1 child or 4 adults and 2 children';
+                }
             }
 
             function setupModal() {
@@ -477,21 +445,244 @@
                 };
             }
 
-            function setupBookingButton() {
+            function setupBookingForm() {
                 const aptData = apartments[aptId];
-                document.getElementById('bookNowBtn').onclick = () => {
+                const adultsCount = document.getElementById('adultsCount');
+                const childrenCount = document.getElementById('childrenCount');
+                const childrenAges = document.getElementById('childrenAges');
+                const adultsError = document.getElementById('adultsError');
+                const childrenError = document.getElementById('childrenError');
+                const bookNowBtn = document.getElementById('bookNowBtn');
+
+                // Determinar el tipo de apartamento
+                const aptType = getApartmentType(aptData.reference);
+
+                // Manejar cambios en el número de adultos
+                adultsCount.addEventListener('change', function() {
+                    const adultsValue = parseInt(this.value);
+                    const childrenValue = parseInt(childrenCount.value);
+
+                    // Validar según el tipo de apartamento
+                    let isValid = true;
+
+                    if (aptType === '1bedroom') { // Para apartamentos 1/1 y 1/2
+                        // Máximo 3 personas en total
+                        if (adultsValue > 3) {
+                            isValid = false;
+                        } else if (adultsValue === 3 && childrenValue > 0) {
+                            // Si hay 3 adultos, no se permiten niños
+                            childrenCount.value = 0;
+                            childrenAges.innerHTML = '';
+                            // Deshabilitar opciones de niños
+                            Array.from(childrenCount.options).forEach(option => {
+                                option.disabled = parseInt(option.value) > 0;
+                            });
+                        } else {
+                            // Con 1 o 2 adultos, se permite máximo 1 niño
+                            Array.from(childrenCount.options).forEach(option => {
+                                option.disabled = parseInt(option.value) > 1;
+                            });
+                            if (childrenValue > 1) {
+                                childrenCount.value = 1;
+                                updateChildrenAges();
+                            }
+                        }
+                    } else { // Para apartamentos 2/2
+                        // Máximo 6 personas en total
+                        if (adultsValue > 6) {
+                            isValid = false;
+                        } else if (adultsValue === 6 && childrenValue > 0) {
+                            // Si hay 6 adultos, no se permiten niños
+                            childrenCount.value = 0;
+                            childrenAges.innerHTML = '';
+                            // Deshabilitar opciones de niños
+                            Array.from(childrenCount.options).forEach(option => {
+                                option.disabled = parseInt(option.value) > 0;
+                            });
+                        } else if (adultsValue === 5 && childrenValue > 1) {
+                            // Si hay 5 adultos, máximo 1 niño
+                            childrenCount.value = 1;
+                            updateChildrenAges();
+                            Array.from(childrenCount.options).forEach(option => {
+                                option.disabled = parseInt(option.value) > 1;
+                            });
+                        } else {
+                            // Con 4 o menos adultos, se permiten máximo 2 niños
+                            Array.from(childrenCount.options).forEach(option => {
+                                option.disabled = parseInt(option.value) > 2;
+                            });
+                            if (childrenValue > 2) {
+                                childrenCount.value = 2;
+                                updateChildrenAges();
+                            }
+                        }
+                    }
+
+                    if (!isValid) {
+                        adultsError.classList.remove('hidden');
+                        bookNowBtn.disabled = true;
+                        bookNowBtn.classList.add('opacity-50');
+                    } else {
+                        adultsError.classList.add('hidden');
+                        validateTotalOccupancy();
+                    }
+                });
+
+                // Función para actualizar los campos de edades de niños
+                function updateChildrenAges() {
+                    const count = parseInt(childrenCount.value);
+                    childrenAges.innerHTML = '';
+
+                    for (let i = 0; i < count; i++) {
+                        const ageGroup = document.createElement('div');
+                        ageGroup.className = 'flex items-center gap-2 bg-white p-2 rounded';
+                        ageGroup.innerHTML = `
+                            <label class="text-sm text-slate-600 flex-1">Child ${i + 1} age:</label>
+                            <select class="child-age p-2 border border-slate-300 rounded-md w-24">
+                                ${Array.from({ length: 18 }, (_, i) => `<option value="${i}">${i} years</option>`).join('')}
+                            </select>
+                        `;
+                        childrenAges.appendChild(ageGroup);
+                    }
+                }
+
+                // Función para validar la ocupación total
+                function validateTotalOccupancy() {
+                    const adultsValue = parseInt(adultsCount.value);
+                    const childrenValue = parseInt(childrenCount.value);
+                    let isValid = true;
+
+                    if (aptType === '1bedroom') {
+                        // Para apartamentos 1/1 y 1/2: máximo 3 personas en total
+                        if (adultsValue + childrenValue > 3) {
+                            isValid = false;
+                        }
+                    } else {
+                        // Para apartamentos 2/2: máximo 6 personas en total
+                        if (adultsValue + childrenValue > 6) {
+                            isValid = false;
+                        }
+                    }
+
+                    if (!isValid) {
+                        childrenError.classList.remove('hidden');
+                        bookNowBtn.disabled = true;
+                        bookNowBtn.classList.add('opacity-50');
+                    } else {
+                        childrenError.classList.add('hidden');
+                        if (adultsError.classList.contains('hidden')) {
+                            bookNowBtn.disabled = false;
+                            bookNowBtn.classList.remove('opacity-50');
+                        }
+                    }
+                }
+
+                // Manejar cambios en el número de menores
+                childrenCount.addEventListener('change', function() {
+                    const childrenValue = parseInt(this.value);
+                    const adultsValue = parseInt(adultsCount.value);
+
+                    // Validar según el tipo de apartamento
+                    if (aptType === '1bedroom') {
+                        if (adultsValue === 3 && childrenValue > 0) {
+                            // Con 3 adultos, no se permiten niños
+                            this.value = 0;
+                            childrenAges.innerHTML = '';
+                            validateTotalOccupancy();
+                            return;
+                        }
+                    } else { // Para apartamentos 2/2
+                        if (adultsValue === 6 && childrenValue > 0) {
+                            // Con 6 adultos, no se permiten niños
+                            this.value = 0;
+                            childrenAges.innerHTML = '';
+                            validateTotalOccupancy();
+                            return;
+                        } else if (adultsValue === 5 && childrenValue > 1) {
+                            // Con 5 adultos, máximo 1 niño
+                            this.value = 1;
+                        }
+                    }
+
+                    updateChildrenAges();
+                    validateTotalOccupancy();
+                });
+
+                // Configurar el botón de reserva
+                bookNowBtn.onclick = () => {
+                    const adultsValue = parseInt(adultsCount.value);
+                    const childrenValue = parseInt(childrenCount.value);
+
+                    // Validar límites de ocupación según el tipo de apartamento
+                    let isValid = true;
+                    let errorMessage = '';
+
+                    if (aptType === '1bedroom') { // Para apartamentos 1/1 y 1/2
+                        if (adultsValue > 3) {
+                            isValid = false;
+                            errorMessage = 'This apartment has a maximum occupancy of 3 adults.';
+                        } else if (adultsValue === 3 && childrenValue > 0) {
+                            isValid = false;
+                            errorMessage = 'With 3 adults, no children are allowed in this apartment.';
+                        } else if (adultsValue + childrenValue > 3) {
+                            isValid = false;
+                            errorMessage = 'This apartment has a maximum total occupancy of 3 people.';
+                        }
+                    } else { // Para apartamentos 2/2
+                        if (adultsValue > 6) {
+                            isValid = false;
+                            errorMessage = 'This apartment has a maximum occupancy of 6 adults.';
+                        } else if (adultsValue === 6 && childrenValue > 0) {
+                            isValid = false;
+                            errorMessage = 'With 6 adults, no children are allowed in this apartment.';
+                        } else if (adultsValue === 5 && childrenValue > 1) {
+                            isValid = false;
+                            errorMessage = 'With 5 adults, only 1 child is allowed in this apartment.';
+                        } else if (adultsValue + childrenValue > 6) {
+                            isValid = false;
+                            errorMessage = 'This apartment has a maximum total occupancy of 6 people.';
+                        }
+                    }
+
+                    if (!isValid) {
+                        alert(errorMessage);
+                        return;
+                    }
+
+                    const childrenAgesArray = Array.from(document.querySelectorAll('.child-age'))
+                        .map(select => select.value);
+
                     const queryParams = new URLSearchParams({
                         apt: aptId,
                         ref: aptData.reference,
+                        name: aptData.name,
                         building: aptData.building,
                         address: aptData.address,
                         price: aptData.pricing.nightly,
                         expenses: aptData.pricing.expenses || 0,
                         fob: aptData.pricing.fob || 0,
-                        parking: aptData.pricing.parking || 0
+                        parking: aptData.pricing.parking || 0,
+                        cleaning: aptData.pricing.cleaning || 0,
+                        adults: adultsValue,
+                        children: childrenValue,
+                        childrenAges: childrenAgesArray.join(',')
                     });
 
-                    window.location.href = `/pages/planning.html?${queryParams.toString()}`;
+                    // Activar el enlace de planificación y establecer la URL
+                    const planningLink = document.getElementById('planningLink');
+                    planningLink.href = `planning.html?${queryParams.toString()}`;
+                    planningLink.classList.remove('pointer-events-none', 'opacity-50');
+
+                    // Mostrar resumen de la reserva
+                    const bookingSummary = `
+                        Booking summary:
+                        - ${adultsValue} adult(s)
+                        - ${childrenValue} child(ren)
+                        ${childrenAgesArray.length > 0 ? '- Children ages: ' + childrenAgesArray.join(', ') + ' years' : ''}
+                    `;
+
+                    // Mostrar mensaje de éxito con el resumen
+                    alert(bookingSummary + '\n\nBooking initiated! You can now access the planning page.');
                 };
             }
 
@@ -499,9 +690,10 @@
             loadImages();
             updateDetails();
             setupModal();
-            setupBookingButton();
+            setupBookingForm();
         });
     </script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

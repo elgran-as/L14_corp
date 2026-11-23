@@ -7,7 +7,7 @@
     <title>Planificación - L14 Corp</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
     <!-- Calendario -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -19,14 +19,12 @@
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between flex-wrap sm:flex-nowrap gap-3">
             <img alt="Logo L14 Corp, estilizado con letras L14 en azul oscuro" class="h-10 w-auto" height="40"
-                src="/assets/images/L14_corp.png" width="80" />
+                src="../assets/images/l14_corp.svg" width="80" />
             <div class="flex items-center gap-4">
                 <select aria-label="Cambiar idioma"
                     class="border border-slate-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    <option selected value="es">English</option>
-                    <option value="en">Español</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
+                    <option value="en">English</option>
+                    <option selected value="es">Español</option>
                 </select>
             </div>
         </div>
@@ -34,7 +32,16 @@
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 flex-grow">
 
-        <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+        <form id="reservationForm" name="reservas-l14" method="POST" action="/" data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <input type="hidden" name="form-name" value="reservas-l14">
+            <input type="hidden" name="reservation-type" id="reservationType">
+            <input type="hidden" name="reservation-details" id="reservationDetailsField">
+            <input type="hidden" name="cost-total" id="reservationCost">
+            <p hidden>
+                <label>No completar este campo: <input name="bot-field"></label>
+            </p>
             <div class="mb-4">
                 <h2 class="text-xl font-semibold mb-4">Detalles de la Reserva</h2>
                 <div id="reservationDetails" class="text-slate-700">
@@ -47,25 +54,25 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label for="firstName" class="block text-sm font-medium text-slate-700 mb-1">Nombre</label>
-                        <input type="text" id="firstName" class="w-full border border-slate-300 rounded-md px-4 py-2"
-                            required>
+                        <input type="text" id="firstName" name="first-name" autocomplete="given-name"
+                            class="w-full border border-slate-300 rounded-md px-4 py-2" required>
                     </div>
                     <div>
                         <label for="lastName" class="block text-sm font-medium text-slate-700 mb-1">Apellido</label>
-                        <input type="text" id="lastName" class="w-full border border-slate-300 rounded-md px-4 py-2"
-                            required>
+                        <input type="text" id="lastName" name="last-name" autocomplete="family-name"
+                            class="w-full border border-slate-300 rounded-md px-4 py-2" required>
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Número de
                             Celular</label>
-                        <input type="tel" id="phone" class="w-full border border-slate-300 rounded-md px-4 py-2"
-                            required>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel"
+                            class="w-full border border-slate-300 rounded-md px-4 py-2" required>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Correo
                             Electrónico</label>
-                        <input type="email" id="email" class="w-full border border-slate-300 rounded-md px-4 py-2"
-                            required>
+                        <input type="email" id="email" name="email" autocomplete="email"
+                            class="w-full border border-slate-300 rounded-md px-4 py-2" required>
                     </div>
                 </div>
             </div>
@@ -76,21 +83,46 @@
                     <div>
                         <label for="dateRange" class="block text-sm font-medium text-slate-700 mb-1">Rango de
                             Fechas</label>
-                        <input type="text" id="dateRange" class="w-full border border-slate-300 rounded-md px-4 py-2"
-                            placeholder="Selecciona las fechas" readonly>
+                        <input type="text" id="dateRange" name="date-range"
+                            class="w-full border border-slate-300 rounded-md px-4 py-2"
+                            placeholder="Selecciona las fechas" readonly required>
                     </div>
                 </div>
             </div>
 
-            <button id="submitReservation"
+            <button id="submitReservation" type="submit"
                 class="w-full bg-blue-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 transition">
                 Confirmar Reserva
             </button>
-        </div>
+            <p id="reservationFormStatus" class="mt-3 text-center text-sm text-red-700" role="status" hidden></p>
+        </form>
     </main>
 
+    <div id="reservationFeedback" class="reservation-feedback" hidden>
+        <section class="reservation-feedback-card" aria-live="polite">
+            <div id="reservationLoader">
+                <div class="reservation-logo-loader" aria-hidden="true">
+                    <img class="reservation-logo-base" src="../assets/images/l14_corp.svg" alt="">
+                    <div id="reservationLogoFill" class="reservation-logo-fill">
+                        <img src="../assets/images/l14_corp.svg" alt="">
+                    </div>
+                </div>
+                <p id="reservationLoadingText" class="mt-4 font-semibold text-blue-900"></p>
+            </div>
+            <div id="reservationResult" hidden>
+                <div class="reservation-success-icon" aria-hidden="true">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h2 id="reservationFeedbackTitle" class="mb-2 text-xl font-bold text-blue-900"></h2>
+                <p id="reservationFeedbackMessage" class="mb-5 text-slate-700"></p>
+                <button id="closeReservationFeedback" type="button"
+                    class="rounded-md bg-blue-900 px-5 py-2 font-semibold text-white hover:bg-blue-800"></button>
+            </div>
+        </section>
+    </div>
+
     <footer class="text-center text-slate-500 text-sm mb-20 px-2">
-        <p>© 2025 L14 Corp. Todos los derechos reservados.</p>
+        <p>© 2026 L14 Corp. Todos los derechos reservados.</p>
         <div class="flex justify-center gap-4 mt-3">
             <a href="https://x.com/L14Corp" target="_blank" rel="noopener noreferrer"
                 class="text-slate-500 hover:text-blue-900 transition-colors" aria-label="Síguenos en X (Twitter)">
@@ -111,44 +143,46 @@
         class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-inner z-40">
         <ul class="flex justify-around max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 gap-3">
             <li class="flex-1">
-                <a href="/index.html" title="Inicio"
+                <a href="../index.html" title="Inicio"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-home text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/apartments.html" title="Departamentos"
+                <a href="apartments.html" title="Departamentos"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-building text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/cars.html" title="Autos"
+                <a href="cars.html" title="Autos"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-car text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/planning.html" title="Planificación"
+                <a href="planning.html" title="Planificación"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-blue-900 bg-blue-900 text-white focus:outline-none transition">
                     <i class="fas fa-calendar-alt text-lg"></i>
                 </a>
             </li>
             <li class="flex-1">
-                <a href="/pages/about.html" title="Quienes Somos"
+                <a href="about.html" title="Quienes Somos"
                     class="flex items-center justify-center w-full py-3 text-center text-sm font-semibold rounded-md border border-transparent hover:border-blue-900 focus:outline-none transition text-slate-700 hover:text-blue-900">
                     <i class="fas fa-info-circle text-lg"></i>
                 </a>
             </li>
         </ul>
     </nav>
-    <script src="/js/main.js"></script>
+    <script src="../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Obtener parámetros de la URL
             const urlParams = new URLSearchParams(window.location.search);
             const aptId = urlParams.get('apt');
             const carId = urlParams.get('car');
+            const busId = urlParams.get('type') === 'bus' ? urlParams.get('id') : null;
+            const vehicleId = carId || busId;
 
             // Debugging
             console.log('Parámetros URL:', {
@@ -243,7 +277,7 @@
                 </div>
             ` + detailsHTML;
                 }
-            } else if (carId) {
+            } else if (vehicleId) {
                 // Agregar la imagen primero
                 if (urlParams.has('image')) {
                     detailsHTML = `
@@ -334,10 +368,10 @@
                     </div>
                 </div>
             `;
-                } else if (carId) {
+                } else if (vehicleId) {
                     // Obtener el precio del auto desde los parámetros de la URL
                     const precioStr = urlParams.get('features')?.split(',').find(f => f.includes('$'))?.match(/\$(\d+)/)?.[1];
-                    const precioDiario = parseFloat(precioStr) || 0;
+                    const precioDiario = parseFloat(urlParams.get('price')) || parseFloat(precioStr) || 0;
 
                     const totalAlquiler = precioDiario * dias;
                     const seguro = 10 * dias; // Seguro diario
@@ -373,15 +407,46 @@
             }
 
             // Manejar el envío del formulario
-            document.getElementById('submitReservation').addEventListener('click', function () {
+            document.getElementById('reservationForm').addEventListener('submit', async function (event) {
+                event.preventDefault();
                 const firstName = document.getElementById('firstName').value;
                 const lastName = document.getElementById('lastName').value;
                 const phone = document.getElementById('phone').value;
                 const email = document.getElementById('email').value;
                 const dateRange = document.getElementById('dateRange').value;
+                const isSpanish = document.documentElement.lang === 'es';
+                const messages = isSpanish ? {
+                    loading: 'Enviando tu reserva...',
+                    successTitle: '¡Enviado con éxito!',
+                    successMessage: 'Los datos de tu reserva fueron enviados correctamente.',
+                    close: 'Continuar',
+                    error: 'No se pudo enviar la reserva. Revisá tu conexión e intentá nuevamente.',
+                    hostedOnly: 'Para enviar la reserva, abrí la versión publicada en Netlify. El servidor local y GitHub Pages no pueden recibir formularios.'
+                } : {
+                    loading: 'Sending your reservation...',
+                    successTitle: 'Sent successfully!',
+                    successMessage: 'Your reservation details were sent successfully.',
+                    close: 'Continue',
+                    error: 'The reservation could not be sent. Check your connection and try again.',
+                    hostedOnly: 'To send your reservation, open the site published on Netlify. Local servers and GitHub Pages cannot receive form submissions.'
+                };
 
                 if (!firstName || !lastName || !phone || !email || !dateRange) {
-                    alert('Por favor, complete todos los campos requeridos');
+                    const status = document.getElementById('reservationFormStatus');
+                    status.textContent = isSpanish ?
+                        'Por favor, completá todos los campos requeridos.' :
+                        'Please complete all required fields.';
+                    status.hidden = false;
+                    return;
+                }
+
+                if (window.location.protocol === 'file:' ||
+                    window.location.hostname === 'localhost' ||
+                    window.location.hostname === '127.0.0.1' ||
+                    window.location.hostname.endsWith('github.io')) {
+                    const status = document.getElementById('reservationFormStatus');
+                    status.textContent = messages.hostedOnly;
+                    status.hidden = false;
                     return;
                 }
 
@@ -392,7 +457,7 @@
                     'No calculado';
 
                 // Obtener detalles adicionales según el tipo de reserva
-                const tipoReserva = aptId ? 'Apartamento' : 'Vehículo';
+                const tipoReserva = aptId ? 'Apartamento' : busId ? 'Bus' : 'Vehículo';
                 const detallesReserva = aptId ? {
                     edificio: urlParams.get('building') || 'No especificado',
                     direccion: urlParams.get('address') || 'No especificado',
@@ -402,35 +467,65 @@
                     caracteristicas: urlParams.get('features') || 'No especificado'
                 };
 
-                // Crear el cuerpo del correo
-                const mailBody = `
-        Nueva Reserva:
-        
-        Datos del Cliente:
-        - Nombre: ${firstName} ${lastName}
-        - Email: ${email}
-        - Teléfono: ${phone}
-        - Fechas: ${dateRange}
-        
-        Detalles de la Reserva:
-        - Tipo: ${tipoReserva}
-        ${aptId ?
-                        `- Edificio: ${detallesReserva.edificio}
-            - Dirección: ${detallesReserva.direccion}
-            - Referencia: ${detallesReserva.referencia}` :
-                        `- Modelo: ${detallesReserva.modelo}
-            - Características: ${detallesReserva.caracteristicas}`
+                document.getElementById('reservationType').value = tipoReserva;
+                document.getElementById('reservationCost').value = costoTotal;
+                document.getElementById('reservationDetailsField').value = aptId ?
+                    `Edificio: ${detallesReserva.edificio}\nDirección: ${detallesReserva.direccion}\nReferencia: ${detallesReserva.referencia}\nPrecio/noche: ${urlParams.get('price') || 'No especificado'}\nGastos: ${urlParams.get('expenses') || '0'}\nFOB: ${urlParams.get('fob') || '0'}\nEstacionamiento/día: ${urlParams.get('parking') || '0'}` :
+                    `Modelo: ${detallesReserva.modelo}\nCaracterísticas: ${detallesReserva.caracteristicas}\nPrecio: ${urlParams.get('price') || 'No especificado'}`;
+
+                const submitButton = document.getElementById('submitReservation');
+                submitButton.disabled = true;
+                submitButton.textContent = messages.loading;
+                const status = document.getElementById('reservationFormStatus');
+                status.hidden = true;
+
+                const feedback = document.getElementById('reservationFeedback');
+                const loader = document.getElementById('reservationLoader');
+                const result = document.getElementById('reservationResult');
+                const logoFill = document.getElementById('reservationLogoFill');
+                document.getElementById('reservationLoadingText').textContent = messages.loading;
+                feedback.hidden = false;
+                loader.hidden = false;
+                result.hidden = true;
+                logoFill.classList.remove('is-filling');
+                void logoFill.offsetWidth;
+                logoFill.classList.add('is-filling');
+
+                const animationFinished = new Promise((resolve) => {
+                    logoFill.addEventListener('animationend', resolve, { once: true });
+                    window.setTimeout(resolve, 2200);
+                });
+
+                try {
+                    const formData = new URLSearchParams(new FormData(this));
+                    const response = await fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: formData.toString()
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Netlify form submission failed with status ${response.status}`);
                     }
-        
-        Costo Total: ${costoTotal}
-    `;
 
-                // Enviar el correo usando mailto
-                const mailtoLink = `mailto:ciwl14corp@gmail.com?subject=Nueva Reserva - L14 Corp&body=${encodeURIComponent(mailBody)}`;
-                window.location.href = mailtoLink;
+                    await animationFinished;
+                    loader.hidden = true;
+                    result.hidden = false;
+                    document.getElementById('reservationFeedbackTitle').textContent = messages.successTitle;
+                    document.getElementById('reservationFeedbackMessage').textContent = messages.successMessage;
+                    document.getElementById('closeReservationFeedback').textContent = messages.close;
+                } catch (error) {
+                    feedback.hidden = true;
+                    status.textContent = messages.error;
+                    status.hidden = false;
+                    submitButton.disabled = false;
+                    submitButton.textContent = isSpanish ? 'Confirmar Reserva' : 'Confirm Reservation';
+                    console.error('Error al enviar la reserva:', error);
+                }
+            });
 
-                // Mostrar mensaje de confirmación
-                alert('¡Gracias por su reserva! Se abrirá su cliente de correo para enviar los detalles.');
+            document.getElementById('closeReservationFeedback').addEventListener('click', function () {
+                document.getElementById('reservationFeedback').hidden = true;
             });
         });
 
