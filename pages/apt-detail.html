@@ -672,17 +672,7 @@
                     const planningLink = document.getElementById('planningLink');
                     planningLink.href = `planning.html?${queryParams.toString()}`;
                     planningLink.classList.remove('pointer-events-none', 'opacity-50');
-
-                    // Mostrar resumen de la reserva
-                    const bookingSummary = `
-                        Booking summary:
-                        - ${adultsValue} adult(s)
-                        - ${childrenValue} child(ren)
-                        ${childrenAgesArray.length > 0 ? '- Children ages: ' + childrenAgesArray.join(', ') + ' years' : ''}
-                    `;
-
-                    // Mostrar mensaje de éxito con el resumen
-                    alert(bookingSummary + '\n\nBooking initiated! You can now access the planning page.');
+                    window.location.assign(planningLink.href);
                 };
             }
 

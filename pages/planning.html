@@ -554,7 +554,8 @@
                     document.getElementById('closeReservationFeedback').textContent = messages.close;
                 } catch (error) {
                     feedback.hidden = true;
-                    status.textContent = messages.error;
+                    const errorDetails = error instanceof Error ? error.message : String(error);
+                    status.textContent = `${messages.error} (${errorDetails})`;
                     status.hidden = false;
                     submitButton.disabled = false;
                     submitButton.textContent = isSpanish ? 'Confirmar Reserva' : 'Confirm Reservation';
