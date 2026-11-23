@@ -186,7 +186,10 @@ document.addEventListener('DOMContentLoaded', function () {
             phone: "Phone Number",
             email: "Email",
             selectDates: "Select Dates",
-            dateRange: "Date Range",
+            startDate: "Start date",
+            endDate: "End date",
+            startDatePlaceholder: "Select a start date",
+            endDatePlaceholder: "Select an end date",
             confirmReservation: "Confirm Reservation",
 
             // Apartment detail page
@@ -274,7 +277,10 @@ document.addEventListener('DOMContentLoaded', function () {
             phone: "Número de Celular",
             email: "Correo Electrónico",
             selectDates: "Seleccionar Fechas",
-            dateRange: "Rango de Fechas",
+            startDate: "Fecha de inicio",
+            endDate: "Fecha de fin",
+            startDatePlaceholder: "Selecciona la fecha de inicio",
+            endDatePlaceholder: "Selecciona la fecha de fin",
             confirmReservation: "Confirmar Reserva",
 
             // Apartment detail page
@@ -474,9 +480,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 selectDatesHeading.textContent = translations[lang].selectDates;
             }
 
-            const dateRangeLabel = document.querySelector('label[for="dateRange"]');
-            if (dateRangeLabel) {
-                dateRangeLabel.textContent = translations[lang].dateRange;
+            const startDateLabel = document.querySelector('label[for="startDate"]');
+            if (startDateLabel) {
+                startDateLabel.textContent = translations[lang].startDate;
+            }
+
+            const endDateLabel = document.querySelector('label[for="endDate"]');
+            if (endDateLabel) {
+                endDateLabel.textContent = translations[lang].endDate;
+            }
+
+            const startDateInput = document.getElementById('startDate');
+            if (startDateInput) {
+                startDateInput.placeholder = translations[lang].startDatePlaceholder;
+            }
+
+            const endDateInput = document.getElementById('endDate');
+            if (endDateInput) {
+                endDateInput.placeholder = translations[lang].endDatePlaceholder;
             }
 
             const confirmButton = document.getElementById('submitReservation');
